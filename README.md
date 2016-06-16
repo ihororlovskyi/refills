@@ -7,3 +7,5 @@ Just experiments
 `npm i`
 
 `gulp`
+
+Proudly hosted by [GitHub Pages](https://pages.github.com)
