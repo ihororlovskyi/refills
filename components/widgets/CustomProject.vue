@@ -10,10 +10,7 @@
         </v-flex>
         <v-flex xs12 sm4 class="mb80">
           <div class="mb20">{{ prePriceText }} <b>{{ price }}</b></div>
-          <v-btn outline class="mx-0">
-            <v-icon left>{{ btnOrder.icon }}</v-icon>
-            {{ btnOrder.text }}
-          </v-btn>
+          <order-dialog/>
         </v-flex>
         <v-flex xs12>
           <v-parallax :src="img" height="300"/>
@@ -24,7 +21,12 @@
 </template>
 
 <script>
+  import OrderDialog from '@/components/shared/OrderDialog'
+
   export default {
+    components: {
+      OrderDialog
+    },
     data () {
       return {
         title: 'Собственный проект',
@@ -32,10 +34,6 @@
         prePriceText: 'Цена проекта и ремонта',
         price: 'от $350 / м2',
         img: 'https://images.unsplash.com/photo-1527005980469-e172416c200b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1200&h=600&q=69',
-        btnOrder: {
-          icon: 'mdi-ruler-square',
-          text: 'Зыказать просчет проекта'
-        },
       }
     }
   }

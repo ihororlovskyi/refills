@@ -40,10 +40,7 @@
       <v-flex xs12 class="mb80">
         <v-layout row wrap>
           <v-flex xs3>
-            <v-btn large block depressed class="mx-0 mb20" color="#262626" dark>
-              <v-icon large left>{{ btnOrder.icon }}</v-icon>
-              {{ btnOrder.text }}
-            </v-btn>
+            <order-dialog/>
             <v-btn large block outline class="mx-0 mb20">
               <v-icon large left>{{ btnPresentation.icon }}</v-icon>
               {{ btnPresentation.text }}
@@ -298,10 +295,12 @@
 </template>
 
 <script>
-  import OtherProjects from '@/components/OtherProjects'
-  import CustomProject from '@/components/CustomProject'
-  import HowItWorks from '@/components/HowItWorks'
-  import Contacts from '@/components/Contacts'
+  import OtherProjects from '@/components/widgets/OtherProjects'
+  import CustomProject from '@/components/widgets/CustomProject'
+  import HowItWorks from '@/components/widgets/HowItWorks'
+  import Contacts from '@/components/widgets/Contacts'
+  import OrderDialog from '@/components/shared/OrderDialog'
+
   import axios from '~/plugins/axios'
   import fetch from 'isomorphic-fetch'
 
@@ -310,7 +309,8 @@
       OtherProjects,
       CustomProject,
       HowItWorks,
-      Contacts
+      Contacts,
+      OrderDialog
     },
     data () {
       return {
@@ -319,10 +319,6 @@
           icon: 'mdi-chevron-left'
         },
         preTitleText: 'Дизайн проект',
-        btnOrder: {
-          icon: 'mdi-ruler-square',
-          text: 'Зыказать просчет проекта'
-        },
         btnPresentation: {
           icon: 'mdi-download',
           text: 'Скачать презентацию'

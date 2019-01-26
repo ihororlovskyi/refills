@@ -1,7 +1,7 @@
 <template>
   <section>
     <div v-for="i in loadedProjectsSortedByOld">
-      <router-link v-ripple :to="'/project/' + i.id + '/'">
+      <router-link v-ripple :to="'/project/' + i.id + '/'" :key="i.id">
         <div>{{ i.title }}</div>
         <!-- <div>{{ i.id }}</div> -->
         <!-- <div>{{ i.params }}</div> -->
@@ -29,9 +29,9 @@
 </template>
 
 <script>
-  import CustomProject from '@/components/CustomProject'
-  import Contacts from '@/components/Contacts'
-  import HowItWorks from '@/components/HowItWorks'
+  import CustomProject from '@/components/widgets/CustomProject'
+  import HowItWorks from '@/components/widgets/HowItWorks'
+  import Contacts from '@/components/widgets/Contacts'
 
   import axios from '~/plugins/axios'
   import fetch from 'isomorphic-fetch'

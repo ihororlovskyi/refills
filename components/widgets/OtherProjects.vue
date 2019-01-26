@@ -5,7 +5,7 @@
         <v-flex xs12 class="mb80">
           <div class="fs24 fw800">{{ title }}</div>
         </v-flex>
-        <v-flex xs12 sm6 v-for="i in data">
+        <v-flex xs12 sm6 v-for="i in data" :key="i.id">
           <v-img :aspect-ratio="3/2" :src="i.imgCover" @click="onLoad(i.id)" v-ripple style="cursor:pointer">
             <v-layout column fill-height>
               <v-spacer></v-spacer>

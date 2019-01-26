@@ -12,10 +12,7 @@
         <div class="HiwItemText">
           <div class="fs24 fw800 mb20">{{ i.title }}</div>
           <p v-if="i.description" v-for="ii in i.description" :key="i.p">{{ ii.p }}</p>
-          <v-btn v-if="!i.description" outline class="mx-0">
-            <v-icon left>{{ btnOrder.icon }}</v-icon>
-            {{ btnOrder.text }}
-          </v-btn>
+          <order-dialog v-if="!i.description"/>
         </div>
       </v-flex>
     </v-layout>
@@ -23,16 +20,17 @@
 </template>
 
 <script>
+  import OrderDialog from '@/components/shared/OrderDialog'
+
   export default {
+    components: {
+      OrderDialog
+    },
     props: [
       'data'
     ],
     data () {
       return {
-        btnOrder: {
-          icon: 'mdi-ruler-square',
-          text: 'Зыказать просчет проекта'
-        },
       }
     }
   }
