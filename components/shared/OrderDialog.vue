@@ -1,10 +1,11 @@
 <template>
-  <v-dialog v-model="deleteTicketDialog" max-width="800">
-    <v-btn depressed large class="mx-0" slot="activator" color="#262626" dark>
-      <v-icon left >{{ btnOrder.icon }}</v-icon>
-      {{ btnOrder.text }}
-    </v-btn>
-    <v-card>
+  <div class="mb20">
+    <v-dialog v-model="deleteTicketDialog" max-width="800">
+      <v-btn depressed large class="ma-0" slot="activator" color="#262626" dark>
+        <v-icon large left>{{ btnOrder.icon }}</v-icon>
+        {{ btnOrder.text }}
+      </v-btn>
+      <v-card>
         <v-card-text class="text-xs-center pa40">
           <div class="text-xs-center fs24 fw800 mb40">{{ title }}</div>
           <v-avatar size="80" class="mb20">
@@ -23,12 +24,13 @@
             />
           </div>
           <v-btn depressed large class="mx-0" color="#262626" dark @click="onRemove">
-            <v-icon left >{{ btnSend.icon }}</v-icon>
+            <v-icon large left>{{ btnSend.icon }}</v-icon>
             {{ btnSend.text }}
           </v-btn>
         </v-card-text>
-    </v-card>
-  </v-dialog>
+      </v-card>
+    </v-dialog>
+  </div>
 </template>
 
 <script>

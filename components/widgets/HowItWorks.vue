@@ -12,7 +12,10 @@
         <div class="HiwItemText">
           <div class="fs24 fw800 mb20">{{ i.title }}</div>
           <p v-if="i.description" v-for="ii in i.description" :key="i.p">{{ ii.p }}</p>
-          <order-dialog v-if="!i.description"/>
+          <div v-if="!i.description">
+            <order-dialog />
+            <download-presentation/>
+          </div>
         </div>
       </v-flex>
     </v-layout>
@@ -21,10 +24,12 @@
 
 <script>
   import OrderDialog from '@/components/shared/OrderDialog'
+  import DownloadPresentation from '@/components/shared/DownloadPresentation'
 
   export default {
     components: {
-      OrderDialog
+      OrderDialog,
+      DownloadPresentation
     },
     props: [
       'data'

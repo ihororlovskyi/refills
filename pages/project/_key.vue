@@ -4,7 +4,6 @@
     <v-layout row wrap class="ProjectsPage">
 
       <v-flex xs12 class="mb40">
-        <h1></h1>
         <v-layout class="fs24 fw800" align-center>
           <v-btn flat icon large :to="btnBack.linkto" class="ml-0 mt-1 mr-4 mb-0">
             <v-icon large>{{ btnBack.icon }}</v-icon>
@@ -41,14 +40,8 @@
         <v-layout row wrap>
           <v-flex xs3>
             <order-dialog/>
-            <v-btn large block outline class="mx-0 mb20">
-              <v-icon large left>{{ btnPresentation.icon }}</v-icon>
-              {{ btnPresentation.text }}
-            </v-btn>
-            <v-btn large block outline class="mx-0 mb20">
-              <v-icon large left>{{ btnVirtualReality.icon }}</v-icon>
-              {{ btnVirtualReality.text }}
-            </v-btn>
+            <download-presentation/>
+            <virtual-reality/>
           </v-flex>
           <v-flex xs3 offset-xs1>
             <div v-html="release.description" class="mb20"/>
@@ -299,7 +292,10 @@
   import CustomProject from '@/components/widgets/CustomProject'
   import HowItWorks from '@/components/widgets/HowItWorks'
   import Contacts from '@/components/widgets/Contacts'
+
   import OrderDialog from '@/components/shared/OrderDialog'
+  import DownloadPresentation from '@/components/shared/DownloadPresentation'
+  import VirtualReality from '@/components/shared/VirtualReality'
 
   import axios from '~/plugins/axios'
   import fetch from 'isomorphic-fetch'
@@ -310,7 +306,9 @@
       CustomProject,
       HowItWorks,
       Contacts,
-      OrderDialog
+      OrderDialog,
+      DownloadPresentation,
+      VirtualReality
     },
     data () {
       return {
@@ -319,14 +317,6 @@
           icon: 'mdi-chevron-left'
         },
         preTitleText: 'Дизайн проект',
-        btnPresentation: {
-          icon: 'mdi-download',
-          text: 'Скачать презентацию'
-        },
-        btnVirtualReality: {
-          icon: 'mdi-virtual-reality',
-          text: 'Смотреть в VR 360°'
-        },
         description2: 'Проект планировки квартиры<br>Дизайн проект<br>Черновая и чистовая отделка',
         prePriceText: 'Цена проекта и ремонта',
         btnReadMore: {
