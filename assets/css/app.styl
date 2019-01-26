@@ -1,19 +1,78 @@
 // Specify overrides (theme and/or base variables etc.)
 // See https://vuetifyjs.com/quick-start
-$theme := {
-  primary: #3f51b5
-  light: #757de8
-  dark: #002984
-  accent: #ce93d8
-  secondary: #424242
-  info: #0D47A1
-  warning: #ffb300
-  error: #B71C1C
-  success: #2E7D32
-}
+// $theme := {
+//   primary: #3f51b5
+//   light: #757de8
+//   dark: #002984
+//   accent: #ce93d8
+//   secondary: #424242
+//   info: #0D47A1
+//   warning: #ffb300
+//   error: #B71C1C
+//   success: #2E7D32
+// }
 
 @require '~vuetify/src/stylus/main.styl'
 
 // Restyling Vuetify
 .application
   font-family 'Montserrat', sans-serif !important
+  font-weight 500
+
+.theme--light.application
+  background-color: #fff
+
+// New Styles
+.fs12
+  font-size 12px
+
+.fs24
+  font-size 24px
+
+.fs32
+  font-size 32px
+
+.fw800
+  font-weight 800
+
+
+.mb20
+  margin-bottom: 20px
+
+.mb40
+  margin-bottom: 40px
+
+.mb80
+  margin-bottom: 80px
+
+.mb200
+  margin-bottom: 200px
+
+
+// .pl10
+//   padding: 10px
+
+
+
+.pt40
+  padding-top: 40px
+
+.pl40
+  padding-left: 40px
+
+.pr40
+  padding-right: 40px
+
+.pb40
+  padding-bottom: 40px
+
+.pa40
+  padding: 40px
+
+
+
+.pt80
+  padding-top: 80px
+
+.pb80
+  padding-bottom: 80px

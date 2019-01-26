@@ -3,7 +3,8 @@
     "axios": "^0.18.0",
     "nuxt": "^1.4.5",
     "vuetify": "^1.2.4",
-    "firebase": "^5.7.2"
+    "firebase": "^5.7.2",
+    "isomorphic-fetch": "^2.2.1"
   },
   "devDependencies": {
     "stylus": "^0.54.5",

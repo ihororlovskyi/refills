@@ -66,6 +66,13 @@ export default {
           return item.id === itemId
         })
       }
+    },
+    loadedOtherProjects (state, getters) {
+      return (itemId) => {
+        return getters.loadedProjectsSortedByOld.filter((project) => {
+          return project.id !== itemId
+        }).slice(0, 2)
+      }
     }
   }
 

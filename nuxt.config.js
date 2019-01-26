@@ -1,22 +1,20 @@
 module.exports = {
   head: {
-    titleTemplate: '%s | Terapolis',
+    titleTemplate: '%s | Studio Yehor Popov',
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Advanced solution for efficient and secure mining' }
+      { charset: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { hid: "description", name: "description", content: "Studio Yehor Popov" }
     ],
     link: [
-      { rel: 'shortcut icon', href: '/img/icons/favicon-32.png' },
-      { rel: 'apple-touch-icon', href: '/img/icons/favicon-144.png' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Montserrat' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=PT+Serif:400,400i' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' },
-      { rel: 'stylesheet', href: 'https://cdn.materialdesignicons.com/2.7.94/css/materialdesignicons.min.css' }
+      { rel: 'shortcut icon', href: 'https://firebasestorage.googleapis.com/v0/b/yehorpopov-db.appspot.com/o/favi%2Ffavicon-32.png?alt=media&token=a9c4f475-4997-46de-84d0-db23786177dc' },
+      { rel: 'apple-touch-icon', href: 'https://firebasestorage.googleapis.com/v0/b/yehorpopov-db.appspot.com/o/favi%2Ffavicon-144.jpg?alt=media&token=ce62c329-c57c-438d-9910-f9167c8f51c2' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Montserrat:500,800|Material+Icons' },
+      { rel: 'stylesheet', href: 'https://cdn.materialdesignicons.com/3.3.92/css/materialdesignicons.min.css' },
     ]
   },
   loading: {
-    color: 'rgba(0,0,0,0.5)',
+    color: '#e8ca6a',
     height: '5px'
   },
   // mode: 'spa',
@@ -26,7 +24,7 @@ module.exports = {
     '~/plugins/fireauth.js'
   ],
   css: [
-    // { src: '~/assets/css/main.css', lang: 'css'},
+    { src: '~/assets/css/main.css', lang: 'css'},
     { src: '~/assets/css/app.styl', lang: 'styl'}
   ],
   // router: {

@@ -1,8 +1,10 @@
 <template>
   <v-app>
 
-    <v-content>
-      <nuxt/>
+    <v-content class="MainContainer">
+      <!-- <v-container> -->
+        <nuxt/>
+      <!-- </v-container> -->
     </v-content>
 
   </v-app>
@@ -12,4 +14,7 @@
 </script>
 
 <style lang="stylus">
+  .MainContainer
+    margin-top 64px !important
+    // max-width: 1200px
 </style>
