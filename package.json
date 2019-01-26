@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "axios": "^0.18.0",
+    "nuxt": "^1.4.5",
+    "vuetify": "^1.2.4",
+    "firebase": "^5.7.2"
+  },
+  "devDependencies": {
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2"
+  },
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt generate"
+  },
+  "engines": {
+    "node": "8.15.0",
+    "npm": "6.4.1"
+  }
+}
