@@ -54,6 +54,7 @@ module.exports = {
   },
   generate: {
     routes: [
+      '/project/-LV_1h029_YoOQLpLg0y/'
     ]
   }
 }
