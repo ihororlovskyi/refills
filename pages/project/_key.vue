@@ -69,7 +69,17 @@
             <span class="ml-2">{{ vr.preTitleText }} {{ release.title }} {{ vr.afterTitleText }}</span>
           </div>
           <div v-html="vr.text" class="ml-5 mb40"/>
-          <script src="https://static.kuula.io/embed.js" data-kuula="https://kuula.co/share/7YJMY?fs=1&vr=0&zoom=1&thumbs=1&hideinst=1&chromeless=0&logo=0" data-width="100%" data-height="600px"></script>
+          <iframe
+            width="100%"
+            height="600"
+            style="width: 100%; height: 600px; border: none; max-width: 100%;"
+            frameborder="0"
+            allow="vr,gyroscope,accelerometer,fullscreen"
+            scrolling="no"
+            allowfullscreen="true"
+            src="https://kuula.co/share/7YJMY?fs=1&vr=0&thumbs=1&hideinst=1&chromeless=0&logo=0"
+          />
+          <!-- <script src="https://static.kuula.io/embed.js" data-kuula="https://kuula.co/share/7YJMY?fs=1&vr=0&zoom=1&thumbs=1&hideinst=1&chromeless=0&logo=0" data-width="100%" data-height="600px"></script> -->
         </v-flex>
 
         <v-flex xs12 class="mb200">
@@ -260,7 +270,7 @@
                 prev-icon="mdi-chevron-left-circle"
               >
                 <v-carousel-item
-                  v-for="i in content.sliderImages"
+                  v-for="i in content.plans"
                   :key="i.src"
                   :src="i.src"
                 />
@@ -365,6 +375,10 @@
             { src: 'https://images.unsplash.com/photo-1506812779316-934cef283429?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1200&h=600&q=69' },
             { src: 'https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1200&h=600&q=69' },
             { src: 'https://images.unsplash.com/photo-1527005980469-e172416c200b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1200&h=600&q=69' }
+          ],
+          plans: [
+            { src: 'https://images.unsplash.com/photo-1534840473734-95c07368722d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1200&h=600&q=69' },
+            { src: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1200&h=600&q=69' }
           ]
         }
       }
