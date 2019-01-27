@@ -1,5 +1,5 @@
 <template>
-  <v-container py-0 class="MainContainer">
+  <v-container py-0 class="MainContainer" id="contacts">
     <v-layout row wrap>
       <v-flex xs12 class="mb80">
         <v-layout row wrap>

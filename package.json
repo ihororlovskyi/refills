@@ -1,10 +1,11 @@
 {
   "dependencies": {
     "axios": "^0.18.0",
-    "nuxt": "^1.4.5",
-    "vuetify": "^1.2.4",
     "firebase": "^5.7.2",
-    "isomorphic-fetch": "^2.2.1"
+    "isomorphic-fetch": "^2.2.1",
+    "nuxt": "^1.4.5",
+    "vue-scrollactive": "^0.8.0",
+    "vuetify": "^1.2.4"
   },
   "devDependencies": {
     "stylus": "^0.54.5",

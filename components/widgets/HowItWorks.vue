@@ -1,5 +1,5 @@
 <template>
-  <v-container py-0 class="MainContainer">
+  <v-container py-0 class="MainContainer" id="howitworks">
     <v-layout row wrap class="pt200">
       <v-flex xs12>
         <div class="fs24 fw800 mb80">{{ data.title }}</div>

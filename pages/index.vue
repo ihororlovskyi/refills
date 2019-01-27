@@ -19,6 +19,10 @@
 
     <contacts :data="contacts" :social="loadedSocialLinksSortedByOld" :map="true" class="mt200 mb200"/>
 
+    <div class="mt200 mb200">.</div>
+    <div class="mt200 mb200">.</div>
+    <div class="mt200 mb200">.</div>
+
   </section>
 </template>
 

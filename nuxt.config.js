@@ -21,7 +21,8 @@ module.exports = {
   plugins: [
     // { src: '~plugins/google-analytics.js', ssr: false },
     '~/plugins/vuetify.js',
-    '~/plugins/fireauth.js'
+    '~/plugins/fireauth.js',
+    '~/plugins/vue-scrollactive.js'
   ],
   css: [
     { src: '~/assets/css/main.css', lang: 'css'},
