@@ -53,7 +53,9 @@ module.exports = {
   },
   generate: {
     routes: [
-      '/project/-LV_1h029_YoOQLpLg0y/'
+      '/project/-LV_1h029_YoOQLpLg0y/',
+      '/project/-LV_7Tr_mSbNDXBLVx59/',
+      '/project/-LV_7kCmQBuGhzBlV3tO/'
     ]
   }
 }

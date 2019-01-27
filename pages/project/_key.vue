@@ -16,7 +16,9 @@
           <v-carousel
             hide-delimiters
             height="600"
-          >
+            next-icon="mdi-chevron-right-circle"
+            prev-icon="mdi-chevron-left-circle"
+        >
             <v-carousel-item
               v-for="i in content.sliderImages"
               :key="i.src"
@@ -81,7 +83,9 @@
               <v-carousel
                 hide-delimiters
                 height="600"
-              >
+                next-icon="mdi-chevron-right-circle"
+                prev-icon="mdi-chevron-left-circle"
+            >
                 <v-carousel-item
                   v-for="i in content.sliderImages"
                   :key="i.src"
@@ -129,7 +133,9 @@
               <v-carousel
                 hide-delimiters
                 height="600"
-              >
+                next-icon="mdi-chevron-right-circle"
+                prev-icon="mdi-chevron-left-circle"
+          >
                 <v-carousel-item
                   v-for="i in content.sliderImages"
                   :key="i.src"
@@ -165,6 +171,8 @@
               <v-carousel
                 hide-delimiters
                 height="600"
+                next-icon="mdi-chevron-right-circle"
+                prev-icon="mdi-chevron-left-circle"
               >
                 <v-carousel-item
                   v-for="i in content.sliderImages"
@@ -248,6 +256,8 @@
               <v-carousel
                 hide-delimiters
                 height="600"
+                next-icon="mdi-chevron-right-circle"
+                prev-icon="mdi-chevron-left-circle"
               >
                 <v-carousel-item
                   v-for="i in content.sliderImages"

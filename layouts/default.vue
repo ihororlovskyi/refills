@@ -2,7 +2,7 @@
   <v-app>
 
     <v-container fluid pa-0 class="Header">
-      <v-container pa-0 class="MainContainer">
+      <v-container py-0 class="MainContainer">
         <v-layout>
           <v-flex xs8 sm6 md4>
             <router-link class="fw800 px-3" :to="home.url" exact v-ripple>
@@ -31,8 +31,8 @@
           </v-flex>
 
           <v-flex class="text-xs-right">
-            <a class="hidden-md-and-down px-3" :href="'tel:' + phone">{{ phone }}</a>
-            <a class="hidden-sm-only px-2"
+            <a class="hidden-md-and-down px-3" :href="'tel:' + phone.href">{{ phone.text }}</a>
+            <a class="hidden-sm-and-down px-2"
               v-for="i in loadedSocialLinksSortedByOld"
               :key="i.key"
               :href="i.link"
@@ -112,14 +112,14 @@
         <v-subheader>Быстрая связь</v-subheader>
 
         <v-list-tile
-          :href="'tel:' + phone"
+          :href="'tel:' + phone.href"
           target="_blank"
         >
           <v-list-tile-action>
-            <v-icon color="#262626">{{ phoneIcon }}</v-icon>
+            <v-icon color="#262626">{{ phone.icon }}</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>{{ phone }}</v-list-tile-title>
+            <v-list-tile-title>{{ phone.text }}</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
 
@@ -136,16 +136,38 @@
     data () {
       return {
         drawer: false,
-        home: { key: 'home', title: 'Studio Yehor Popov', icon: 'mdi-circle', url: '/', anchor: '#home' },
+        home: {
+          title: 'Studio Yehor Popov',
+          icon: 'mdi-circle',
+          url: '/'
+        },
         menu: [
-          { key: 'projects', title: 'Проекты', url: '/', anchor: '#projects' },
-          { key: 'howitworks', title: 'Как мы работаем', url: '/', anchor: '#howitworks' },
-          // { key: 'works', title: 'Наши работы', url: '/', anchor: '#works' },
-          { key: 'team', title: 'Команда', url: '/', anchor: '#team' },
-          { key: 'contacts', title: 'Контакты', url: '/', anchor: '#contacts' }
+          {
+            title: 'Проекты',
+            anchor: '#projects'
+          },
+          {
+            title: 'Как мы работаем',
+            anchor: '#howitworks'
+          },
+          // {
+          //   title: 'Наши работы',
+          //   anchor: '#works'
+          // },
+          {
+            title: 'Команда',
+            anchor: '#team'
+          },
+          {
+            title: 'Контакты',
+            anchor: '#contacts'
+          }
         ],
-        phone: '+380 95 126 36 80',
-        phoneIcon: 'mdi-phone'
+        phone: {
+          icon: 'mdi-phone',
+          href: '+380951263680',
+          text: '+380 95 126 36 80'
+        }
       }
     },
     computed: {
@@ -158,7 +180,6 @@
     },
     methods: {
       onItemChanged(event, currentItem, lastActiveItem) {
-        // your logic
       }
     }
   }
@@ -174,7 +195,7 @@
       display: inline-flex
       justify-content: flex-start
       align-items: center
-      height: 64px
+      height: 80px
       text-decoration: none
       transition: background-color .5s ease
       color: #262626
