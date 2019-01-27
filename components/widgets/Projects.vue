@@ -5,7 +5,7 @@
         <v-flex xs12>
           <div class="fs24 fw800 mb80">{{ preTitle }} {{ i.title }}</div>
         </v-flex>
-        <v-flex xs4>
+        <v-flex xs12 sm4>
           <div class="ProjectsItemText mb-5">
             <div class="mb-5" v-html="i.description"/>
             <div class="mb-4">{{ prePrice }} <b>{{ i.price }}</b></div>
@@ -18,7 +18,7 @@
             <virtual-reality/>
           </div>
         </v-flex>
-        <v-flex xs8 class="mb80">
+        <v-flex xs12 sm8 class="mb80">
           <v-carousel
             hide-delimiters
             height="600"
