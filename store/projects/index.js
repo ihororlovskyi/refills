@@ -27,6 +27,7 @@ export default {
               price: obj[key].price,
               atHero: obj[key].atHero,
               heroColor: obj[key].heroColor,
+              isPublished: obj[key].isPublished,
               imgCover: obj[key].imgCover,
               date: obj[key].date
             })
@@ -45,7 +46,9 @@ export default {
 
   getters: {
     loadedProjects (state) {
-      return state.loadedProjects
+      return state.loadedProjects.filter((project) => {
+        return project.isPublished
+      })
     },
     loadedProjectsSortedByOld (state, getters) {
       return getters.loadedProjects.sort((itemA, itemB) => {
