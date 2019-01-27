@@ -1,6 +1,6 @@
 <template>
-  <v-container fluid pa-0 class="CustomProject">
-    <v-container py-0>
+  <v-container fluid pa-0 style="background-color:#f7f7f7;">
+    <v-container py-0 class="MainContainer">
       <v-layout row wrap class="pt80 pb80">
         <v-flex xs12 class="mb40">
           <div class="fs24 fw800">{{ title }}</div>
@@ -40,6 +40,4 @@
 </script>
 
 <style lang="stylus">
-  .CustomProject
-    background-color: #f7f7f7
 </style>

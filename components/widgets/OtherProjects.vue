@@ -1,7 +1,7 @@
 <template>
-  <v-container fluid pa-0 class="OtherProjects">
-    <v-container py-0>
-      <v-layout row wrap class="pt80 pb80">
+  <v-container fluid pa-0 style="background-color:#f7f7f7;">
+    <v-container py-0 class="MainContainer">
+      <v-layout row wrap class="pt200 pb80">
         <v-flex xs12 class="mb80">
           <div class="fs24 fw800">{{ title }}</div>
         </v-flex>
@@ -38,6 +38,4 @@
 </script>
 
 <style lang="stylus">
-  .OtherProjects
-    background-color: #f7f7f7
 </style>

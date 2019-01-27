@@ -1,293 +1,285 @@
 <template>
-  <section>
-    <div class="mb200"/>
-    <v-layout row wrap class="ProjectsPage">
+  <section class="pt200">
+    <v-container py-0 class="MainContainer">
+      <v-layout row wrap>
 
-      <v-flex xs12 class="mb40">
-        <v-layout class="fs24 fw800" align-center>
-          <v-btn flat icon large :to="btnBack.linkto" class="ml-0 mt-1 mr-4 mb-0">
-            <v-icon large>{{ btnBack.icon }}</v-icon>
-          </v-btn>
-          <h1 class="fs24 fw800">{{ preTitleText }} {{ release.title }}</h1>
-        </v-layout>
-      </v-flex>
+        <v-flex xs12 class="mb40">
+          <v-layout class="fs24 fw800" align-center>
+            <v-btn flat icon large :to="btnBack.linkto" class="ml-0 mt-1 mr-4 mb-0">
+              <v-icon large>{{ btnBack.icon }}</v-icon>
+            </v-btn>
+            <h1 class="fs24 fw800">{{ preTitleText }} {{ release.title }}</h1>
+          </v-layout>
+        </v-flex>
 
-      <v-flex xs12 class="mb40">
-        <v-carousel
-          hide-delimiters
-          height="600"
-        >
-          <v-carousel-item
-            v-for="i in content.sliderImages"
-            :key="i.src"
-            :src="i.src"
-          />
-        </v-carousel>
-      </v-flex>
+        <v-flex xs12 class="mb40">
+          <v-carousel
+            hide-delimiters
+            height="600"
+          >
+            <v-carousel-item
+              v-for="i in content.sliderImages"
+              :key="i.src"
+              :src="i.src"
+            />
+          </v-carousel>
+        </v-flex>
 
-      <v-flex xs12 class="mb80">
-        <v-layout>
-          <v-flex xs2 style="height:30px;background-color:#e8ca6a"/>
-          <v-flex xs2 style="height:30px;background-color:#529dc0"/>
-          <v-flex xs2 style="height:30px;background-color:#f3352e"/>
-          <v-flex xs2 style="height:30px;background-color:#a0683d"/>
-          <v-flex xs2 style="height:30px;background-color:#eed9cd"/>
-          <v-flex xs2 style="height:30px;background-color:#f2f2f2"/>
-        </v-layout>
-      </v-flex>
+        <v-flex xs12 class="mb80">
+          <v-layout>
+            <v-flex xs2 style="height:30px;background-color:#e8ca6a"/>
+            <v-flex xs2 style="height:30px;background-color:#529dc0"/>
+            <v-flex xs2 style="height:30px;background-color:#f3352e"/>
+            <v-flex xs2 style="height:30px;background-color:#a0683d"/>
+            <v-flex xs2 style="height:30px;background-color:#eed9cd"/>
+            <v-flex xs2 style="height:30px;background-color:#f2f2f2"/>
+          </v-layout>
+        </v-flex>
 
-      <v-flex xs12 class="mb80">
-        <v-layout row wrap>
-          <v-flex xs3>
-            <order-dialog/>
-            <download-presentation/>
-            <virtual-reality/>
-          </v-flex>
-          <v-flex xs3 offset-xs1>
-            <div v-html="release.description" class="mb20"/>
-          </v-flex>
-          <v-flex xs3 offset-xs1>
-            <div v-html="description2" class="mb20"/>
-            <div class="mb20">{{ prePriceText }} <b>{{ release.price }}</b></div>
-          </v-flex>
-        </v-layout>
-      </v-flex>
+        <v-flex xs12 class="mb80">
+          <v-layout row wrap>
+            <v-flex xs3>
+              <order-dialog/>
+              <download-presentation/>
+              <virtual-reality/>
+            </v-flex>
+            <v-flex xs3 offset-xs1>
+              <div v-html="release.description" class="mb20"/>
+            </v-flex>
+            <v-flex xs3 offset-xs1>
+              <div v-html="description2" class="mb20"/>
+              <div class="mb20">{{ prePriceText }} <b>{{ release.price }}</b></div>
+            </v-flex>
+          </v-layout>
+        </v-flex>
 
-      <v-flex xs12>
-        <contacts :data="contacts" :social="loadedSocialLinksSortedByOld" :map="false"/>
-      </v-flex>
+        <v-flex xs12>
+          <contacts :data="contacts" :social="loadedSocialLinksSortedByOld" :map="false"/>
+        </v-flex>
 
-      <v-flex xs12 class="mb200">
-        <v-divider/>
-      </v-flex>
+        <v-flex xs12 class="mb200">
+          <v-divider/>
+        </v-flex>
 
-      <v-flex xs12 class="mb80">
-        <div class="fs24 fw800 mb-2">
-          <v-icon large class="mr-1">{{ vr.preTitleIcon }}</v-icon>
-          <span class="ml-2">{{ vr.preTitleText }} {{ release.title }} {{ vr.afterTitleText }}</span>
-        </div>
-        <div v-html="vr.text" class="ml-5 mb40"/>
-        <script src="https://static.kuula.io/embed.js" data-kuula="https://kuula.co/share/7YJMY?fs=1&vr=0&zoom=1&thumbs=1&hideinst=1&chromeless=0&logo=0" data-width="100%" data-height="600px"></script>
-      </v-flex>
+        <v-flex xs12 class="mb80">
+          <div class="fs24 fw800 mb-2">
+            <v-icon large class="mr-1">{{ vr.preTitleIcon }}</v-icon>
+            <span class="ml-2">{{ vr.preTitleText }} {{ release.title }} {{ vr.afterTitleText }}</span>
+          </div>
+          <div v-html="vr.text" class="ml-5 mb40"/>
+          <script src="https://static.kuula.io/embed.js" data-kuula="https://kuula.co/share/7YJMY?fs=1&vr=0&zoom=1&thumbs=1&hideinst=1&chromeless=0&logo=0" data-width="100%" data-height="600px"></script>
+        </v-flex>
 
-      <v-flex xs12 class="mb200">
-        <v-divider/>
-      </v-flex>
+        <v-flex xs12 class="mb200">
+          <v-divider/>
+        </v-flex>
 
-      <v-flex xs12 class="mb80">
-        <div class="fs24 fw800 mb80">{{ chill.preTitleText }} {{ release.title }}</div>
-        <v-layout row wrap class="mb80">
-          <v-flex xs8>
-            <v-carousel
-              hide-delimiters
-              height="600"
-            >
-              <v-carousel-item
-                v-for="i in content.sliderImages"
-                :key="i.src"
-                :src="i.src"
-              />
-            </v-carousel>
-          </v-flex>
-          <v-flex xs4>
-            <div class="pl40">
-              <div v-html="chill.priceIncluded" class="mb20"/>
-              <div v-html="chill.text"/>
-            </div>
-          </v-flex>
-        </v-layout>
-        <v-layout row wrap>
-          <v-flex xs4>
-            <v-parallax :src="release.imgCover" height="300" class="mb40"/>
-            <div v-html="chill.feature"/>
-          </v-flex>
-          <v-flex xs4>
-            <v-parallax :src="release.imgCover" height="300" class="mb40"/>
-            <div v-html="chill.feature"/>
-          </v-flex>
-          <v-flex xs4>
-            <v-parallax :src="release.imgCover" height="300" class="mb40"/>
-            <div v-html="chill.feature"/>
-          </v-flex>
-        </v-layout>
-      </v-flex>
+        <v-flex xs12 class="mb80">
+          <div class="fs24 fw800 mb80">{{ chill.preTitleText }} {{ release.title }}</div>
+          <v-layout row wrap class="mb80">
+            <v-flex xs8>
+              <v-carousel
+                hide-delimiters
+                height="600"
+              >
+                <v-carousel-item
+                  v-for="i in content.sliderImages"
+                  :key="i.src"
+                  :src="i.src"
+                />
+              </v-carousel>
+            </v-flex>
+            <v-flex xs4>
+              <div class="pl40">
+                <div v-html="chill.priceIncluded" class="mb20"/>
+                <div v-html="chill.text"/>
+              </div>
+            </v-flex>
+          </v-layout>
+          <v-layout row wrap>
+            <v-flex xs4>
+              <v-parallax :src="release.imgCover" height="300" class="mb40"/>
+              <div v-html="chill.feature"/>
+            </v-flex>
+            <v-flex xs4>
+              <v-parallax :src="release.imgCover" height="300" class="mb40"/>
+              <div v-html="chill.feature"/>
+            </v-flex>
+            <v-flex xs4>
+              <v-parallax :src="release.imgCover" height="300" class="mb40"/>
+              <div v-html="chill.feature"/>
+            </v-flex>
+          </v-layout>
+        </v-flex>
 
-      <v-flex xs12 class="mb200">
-        <v-divider/>
-      </v-flex>
+        <v-flex xs12 class="mb200">
+          <v-divider/>
+        </v-flex>
 
-      <v-flex xs12 class="mb80">
-        <div class="fs24 fw800 mb80 text-xs-right">{{ kitchen.preTitleText }}</div>
-        <v-layout row wrap class="mb80">
-          <v-flex xs4>
-            <div class="pr40">
-              <div v-html="kitchen.priceIncluded" class="mb20"/>
-              <div v-html="kitchen.text"/>
-            </div>
-          </v-flex>
-          <v-flex xs8>
-            <v-carousel
-              hide-delimiters
-              height="600"
-            >
-              <v-carousel-item
-                v-for="i in content.sliderImages"
-                :key="i.src"
-                :src="i.src"
-              />
-            </v-carousel>
-          </v-flex>
-        </v-layout>
-        <v-layout row wrap>
-          <v-flex xs4>
-            <v-parallax :src="release.imgCover" height="300" class="mb40"/>
-            <div v-html="kitchen.feature"/>
-          </v-flex>
-          <v-flex xs4>
-            <v-parallax :src="release.imgCover" height="300" class="mb40"/>
-            <div v-html="kitchen.feature"/>
-          </v-flex>
-          <v-flex xs4>
-            <v-parallax :src="release.imgCover" height="300" class="mb40"/>
-            <div v-html="kitchen.feature"/>
-          </v-flex>
-        </v-layout>
-      </v-flex>
+        <v-flex xs12 class="mb80">
+          <div class="fs24 fw800 mb80 text-xs-right">{{ kitchen.preTitleText }}</div>
+          <v-layout row wrap class="mb80">
+            <v-flex xs4>
+              <div class="pr40">
+                <div v-html="kitchen.priceIncluded" class="mb20"/>
+                <div v-html="kitchen.text"/>
+              </div>
+            </v-flex>
+            <v-flex xs8>
+              <v-carousel
+                hide-delimiters
+                height="600"
+              >
+                <v-carousel-item
+                  v-for="i in content.sliderImages"
+                  :key="i.src"
+                  :src="i.src"
+                />
+              </v-carousel>
+            </v-flex>
+          </v-layout>
+          <v-layout row wrap>
+            <v-flex xs4>
+              <v-parallax :src="release.imgCover" height="300" class="mb40"/>
+              <div v-html="kitchen.feature"/>
+            </v-flex>
+            <v-flex xs4>
+              <v-parallax :src="release.imgCover" height="300" class="mb40"/>
+              <div v-html="kitchen.feature"/>
+            </v-flex>
+            <v-flex xs4>
+              <v-parallax :src="release.imgCover" height="300" class="mb40"/>
+              <div v-html="kitchen.feature"/>
+            </v-flex>
+          </v-layout>
+        </v-flex>
 
-      <v-flex xs12 class="mb200">
-        <v-divider/>
-      </v-flex>
+        <v-flex xs12 class="mb200">
+          <v-divider/>
+        </v-flex>
 
-      <v-flex xs12 class="mb80">
-        <div class="fs24 fw800 mb80">{{ bathroom.preTitleText }}</div>
-        <v-layout row wrap>
-          <v-flex xs8>
-            <v-carousel
-              hide-delimiters
-              height="600"
-            >
-              <v-carousel-item
-                v-for="i in content.sliderImages"
-                :key="i.src"
-                :src="i.src"
-              />
-            </v-carousel>
-          </v-flex>
-          <v-flex xs4>
-            <div class="pl40">
-              <div v-html="bathroom.priceIncluded" class="mb20"/>
-              <div v-html="bathroom.text"/>
-            </div>
-          </v-flex>
-        </v-layout>
-      </v-flex>
+        <v-flex xs12 class="mb80">
+          <div class="fs24 fw800 mb80">{{ bathroom.preTitleText }}</div>
+          <v-layout row wrap>
+            <v-flex xs8>
+              <v-carousel
+                hide-delimiters
+                height="600"
+              >
+                <v-carousel-item
+                  v-for="i in content.sliderImages"
+                  :key="i.src"
+                  :src="i.src"
+                />
+              </v-carousel>
+            </v-flex>
+            <v-flex xs4>
+              <div class="pl40">
+                <div v-html="bathroom.priceIncluded" class="mb20"/>
+                <div v-html="bathroom.text"/>
+              </div>
+            </v-flex>
+          </v-layout>
+        </v-flex>
 
-      <v-flex xs12 class="mb200">
-        <v-divider/>
-      </v-flex>
+        <v-flex xs12 class="mb200">
+          <v-divider/>
+        </v-flex>
 
-      <v-flex xs12 class="mb80">
-        <div class="fs24 fw800 mb80 text-xs-center">{{ features.preTitleText }}</div>
-        <v-layout row wrap>
-          <v-flex xs4>
-            <v-parallax :src="release.imgCover" height="400"/>
-          </v-flex>
-          <v-flex xs4>
-            <div class="pa40">
-              <div v-html="features.priceIncluded" class="mb20"/>
-              <div v-html="features.text1"/>
-            </div>
-          </v-flex>
-        </v-layout>
-        <v-layout row wrap>
-          <v-flex xs4>
-            <div class="pa40 text-xs-right">
-              <div v-html="features.priceIncluded" class="mb20"/>
-              <div v-html="features.text2"/>
-            </div>
-          </v-flex>
-          <v-flex xs4>
-            <v-parallax :src="release.imgCover" height="600"/>
-          </v-flex>
-          <v-flex xs4>
-            <div class="pa40">
-              <div v-html="features.priceIncluded" class="mb20"/>
-              <div v-html="features.text1"/>
-            </div>
-          </v-flex>
-        </v-layout>
-        <v-layout row wrap>
-          <v-flex xs4>
-            <v-parallax :src="release.imgCover" height="400"/>
-          </v-flex>
-          <v-flex xs4>
-            <div class="pa40">
-              <div v-html="features.priceIncluded" class="mb20"/>
-              <div v-html="features.text1"/>
-            </div>
-          </v-flex>
-          <v-flex xs4>
-            <v-parallax :src="release.imgCover" height="400"/>
-          </v-flex>
-        </v-layout>
-      </v-flex>
+        <v-flex xs12 class="mb80">
+          <div class="fs24 fw800 mb80 text-xs-center">{{ features.preTitleText }}</div>
+          <v-layout row wrap>
+            <v-flex xs4>
+              <v-parallax :src="release.imgCover" height="400"/>
+            </v-flex>
+            <v-flex xs4>
+              <div class="pa40">
+                <div v-html="features.priceIncluded" class="mb20"/>
+                <div v-html="features.text1"/>
+              </div>
+            </v-flex>
+          </v-layout>
+          <v-layout row wrap>
+            <v-flex xs4>
+              <div class="pa40 text-xs-right">
+                <div v-html="features.priceIncluded" class="mb20"/>
+                <div v-html="features.text2"/>
+              </div>
+            </v-flex>
+            <v-flex xs4>
+              <v-parallax :src="release.imgCover" height="600"/>
+            </v-flex>
+            <v-flex xs4>
+              <div class="pa40">
+                <div v-html="features.priceIncluded" class="mb20"/>
+                <div v-html="features.text1"/>
+              </div>
+            </v-flex>
+          </v-layout>
+          <v-layout row wrap>
+            <v-flex xs4>
+              <v-parallax :src="release.imgCover" height="400"/>
+            </v-flex>
+            <v-flex xs4>
+              <div class="pa40">
+                <div v-html="features.priceIncluded" class="mb20"/>
+                <div v-html="features.text1"/>
+              </div>
+            </v-flex>
+            <v-flex xs4>
+              <v-parallax :src="release.imgCover" height="400"/>
+            </v-flex>
+          </v-layout>
+        </v-flex>
 
-      <v-flex xs12 class="mb200">
-        <v-divider/>
-      </v-flex>
+        <v-flex xs12 class="mb200">
+          <v-divider/>
+        </v-flex>
 
-      <v-flex xs12 class="mb200">
-        <v-layout row wrap>
-          <v-flex xs8 class="mb80">
-            <div class="fs24 fw800">{{ redevelopment.preTitleText }}</div>
-          </v-flex>
-          <v-flex xs4 class="mb80">
-            <div v-html="redevelopment.text"/>
-          </v-flex>
-          <v-flex xs12>
-            <v-carousel
-              hide-delimiters
-              height="600"
-            >
-              <v-carousel-item
-                v-for="i in content.sliderImages"
-                :key="i.src"
-                :src="i.src"
-              />
-            </v-carousel>
-          </v-flex>
-        </v-layout>
-      </v-flex>
+        <v-flex xs12 class="mb160">
+          <v-layout row wrap>
+            <v-flex xs8 class="mb80">
+              <div class="fs24 fw800">{{ redevelopment.preTitleText }}</div>
+            </v-flex>
+            <v-flex xs4 class="mb80">
+              <div v-html="redevelopment.text"/>
+            </v-flex>
+            <v-flex xs12>
+              <v-carousel
+                hide-delimiters
+                height="600"
+              >
+                <v-carousel-item
+                  v-for="i in content.sliderImages"
+                  :key="i.src"
+                  :src="i.src"
+                />
+              </v-carousel>
+            </v-flex>
+          </v-layout>
+        </v-flex>
+      </v-layout>
+    </v-container>
 
-      <v-flex xs12>
-        <other-projects :data="loadedOtherProjects"/>
-      </v-flex>
+    <order-content class="mb40"/>
 
-      <v-flex xs12>
-        <v-divider/>
-      </v-flex>
+    <other-projects :data="loadedOtherProjects"/>
 
-      <v-flex xs12>
-        <custom-project/>
-      </v-flex>
+    <v-divider/>
 
-      <v-flex xs12>
-        <how-it-works :data="howItWorks"/>
-      </v-flex>
+    <custom-project/>
 
-      <v-flex xs12 class="mb200">
-        <v-divider/>
-      </v-flex>
+    <how-it-works :data="howItWorks"/>
 
-      <v-flex xs12 class="mb80">
-        <contacts :data="contacts" :social="loadedSocialLinksSortedByOld" :map="false"/>
-      </v-flex>
+    <v-divider/>
 
-    </v-layout>
+    <contacts :data="contacts" :social="loadedSocialLinksSortedByOld" :map="false" class="mt200 mb200"/>
+
   </section>
 </template>
 
 <script>
+  import OrderContent from '@/components/shared/OrderContent'
   import OtherProjects from '@/components/widgets/OtherProjects'
   import CustomProject from '@/components/widgets/CustomProject'
   import HowItWorks from '@/components/widgets/HowItWorks'
@@ -302,6 +294,7 @@
 
   export default {
     components: {
+      OrderContent,
       OtherProjects,
       CustomProject,
       HowItWorks,

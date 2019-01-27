@@ -1,31 +1,25 @@
 <template>
   <section>
-    <div v-for="i in loadedProjectsSortedByOld">
-      <router-link v-ripple :to="'/project/' + i.id + '/'" :key="i.id">
-        <div>{{ i.title }}</div>
-        <!-- <div>{{ i.id }}</div> -->
-        <!-- <div>{{ i.params }}</div> -->
-      </router-link>
-    </div>
 
-    <v-flex xs12>
-      <custom-project/>
-    </v-flex>
+    <v-container py-0 class="MainContainer">
+      <v-layout row wrap>
+        <div v-for="i in loadedProjectsSortedByOld">
+          <router-link v-ripple :to="'/project/' + i.id + '/'" :key="i.id">
+            <div>{{ i.title }}</div>
+          </router-link>
+        </div>
+      </v-layout>
+    </v-container>
 
-    <v-flex xs12>
-      <how-it-works :data="howItWorks"/>
-    </v-flex>
+    <custom-project/>
 
-    <v-flex xs12 class="mb200">
-      <v-divider/>
-    </v-flex>
+    <how-it-works :data="howItWorks"/>
 
-    <v-flex xs12>
-      <contacts :data="contacts" :social="loadedSocialLinksSortedByOld" :map="true"/>
-    </v-flex>
+    <v-divider/>
 
-  </v-layout>
-</section>
+    <contacts :data="contacts" :social="loadedSocialLinksSortedByOld" :map="true" class="mt200 mb200"/>
+
+  </section>
 </template>
 
 <script>
