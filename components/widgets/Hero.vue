@@ -16,8 +16,23 @@
       <v-flex xs12 md8>
         <v-layout row wrap>
           <v-flex xs4 v-for="i in data" :key="i.id">
-            <a class="topImgItem"
-              @click="onLoadProject(i.id)"
+
+            <v-img class="topImgItem" :src="i.imgCover" @click="onLoad(i.id)" v-ripple style="cursor:pointer">
+              <!-- <v-layout column fill-height>
+                <v-spacer></v-spacer>
+                <div class="pl40 pb40 white--text fs24 fw800">{{ preTitleText }}<br>{{ i.title }}</div>
+              </v-layout> -->
+              <div :class="'topImgItem__hover'" :style="'background-color:' + i.heroColor">
+                <div class="fs22 fw800 white--text mb20">{{ i.title }}</div>
+                <v-btn class="mx-0 mt-3" large depressed color="#fff">
+                  {{ btnReadMore.text }}
+                  <v-icon right small>{{ btnReadMore.icon }}</v-icon>
+                </v-btn>
+              </div>
+            </v-img>
+
+            <!-- <a class="topImgItem"
+              @click="onLoad(i.id)"
               :style="'background-image:url(' + i.imgCover + ')'"
               v-ripple
             >
@@ -28,7 +43,8 @@
                   <v-icon right small>{{ btnReadMore.icon }}</v-icon>
                 </v-btn>
               </div>
-            </a>
+            </a> -->
+
           </v-flex>
         </v-layout>
       </v-flex>
@@ -54,7 +70,7 @@
       }
     },
     methods: {
-      onLoadProject (id) {
+      onLoad (id) {
         this.$router.push('/project/' + id)
       }
     },
@@ -72,7 +88,7 @@
 <style lang="stylus">
   .topImgItem
     display block
-    min-height 460px
+    min-height 500px
     position relative
     overflow hidden
     background-size cover
