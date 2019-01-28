@@ -2,10 +2,10 @@
   <v-container py-0 class="MainContainer" id="team">
     <v-layout row wrap class="Team mt200">
       <v-flex xs12>
-        <div class="fs24 fw800 mb80">{{ data.title }}</div>
+        <div class="fs24 fw800 mb80">{{ dataFetch.title }}</div>
       </v-flex>
       <div class="TeamList mb40">
-        <div v-for="i in data.list" :key="i.name" class="TeamListItem mb80">
+        <div v-for="i in dataStore" :key="i.name" class="TeamListItem mb80">
           <div class="TeamListItemMedia">
             <v-img class="TeamListItemMediaPhoto" :src="i.photo" :alt="i.name"/>
           </div>
@@ -23,7 +23,8 @@
 <script>
   export default {
     props: [
-      'data'
+      'dataStore',
+      'dataFetch'
     ]
   }
 </script>

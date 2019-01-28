@@ -23,11 +23,11 @@ export default {
             items.push({
               id: key,
               title: obj[key].title,
+              isPublished: obj[key].isPublished,
               description: obj[key].description,
               price: obj[key].price,
               atHero: obj[key].atHero,
               heroColor: obj[key].heroColor,
-              isPublished: obj[key].isPublished,
               imgCover: obj[key].imgCover,
               date: obj[key].date
             })

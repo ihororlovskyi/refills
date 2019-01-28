@@ -9,7 +9,7 @@
     <v-divider/>
     <works/>
     <v-divider/>
-    <team :data="team"/>
+    <team :dataStore="loadedTeamMembersSortedByOld" :dataFetch="loadedTeamMembersSortedByOld"/>
     <v-divider/>
     <contacts :data="contacts" :social="loadedSocialLinksSortedByOld" :map="true" class="mt200 mb200"/>
 
@@ -74,6 +74,9 @@
       },
       loadedSocialLinksSortedByOld () {
         return this.$store.getters.loadedSocialLinksSortedByOld
+      },
+      loadedTeamMembersSortedByOld () {
+        return this.$store.getters.loadedTeamMembersSortedByOld
       }
     },
     head: {

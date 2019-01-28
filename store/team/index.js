@@ -3,33 +3,34 @@ import firebase, { DB } from '@/services/fireinit.js'
 export default {
 
   state: {
-    loadedSocialLinks: []
+    loadedTeamMembers: []
   },
 
   mutations: {
-    setLoadedSocialLinks (state, payload) {
-      state.loadedSocialLinks = payload
+    setLoadedTeamMembers (state, payload) {
+      state.loadedTeamMembers = payload
     }
   },
 
   actions: {
-    loadSocialLinks ({commit}) {
+    loadTeamMembers ({commit}) {
       commit('setLoading', true)
-      firebase.database().ref('social').once('value')
+      firebase.database().ref('team/list').once('value')
         .then((data) => {
           const items = []
           const obj = data.val()
           for (let key in obj) {
             items.push({
               id: key,
-              title: obj[key].title,
+              name: obj[key].name,
               isPublished: obj[key].isPublished,
-              link: obj[key].link,
-              icon: obj[key].icon,
+              position: obj[key].position,
+              photo: obj[key].photo,
+              quote: obj[key].quote,
               date: obj[key].date
             })
           }
-          commit('setLoadedSocialLinks', items)
+          commit('setLoadedTeamMembers', items)
           commit('setLoading', false)
         })
         .catch(
@@ -42,18 +43,18 @@ export default {
   },
 
   getters: {
-    loadedSocialLinks (state) {
-      return state.loadedSocialLinks.filter((project) => {
+    loadedTeamMembers (state) {
+      return state.loadedTeamMembers.filter((project) => {
         return project.isPublished
       })
     },
-    loadedSocialLinksSortedByOld (state, getters) {
-      return getters.loadedSocialLinks.sort((itemA, itemB) => {
+    loadedTeamMembersSortedByOld (state, getters) {
+      return getters.loadedTeamMembers.sort((itemA, itemB) => {
         return new Date(itemA.date) - new Date(itemB.date)
       })
     },
-    loadedSocialLinksSortedByNew (state, getters) {
-      return getters.loadedSocialLinksSortedByOld.reverse()
+    loadedTeamMembersSortedByNew (state, getters) {
+      return getters.loadedTeamMembersSortedByOld.reverse()
     }
   }
 
