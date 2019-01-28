@@ -3,6 +3,7 @@
 export default (context) => {
   const {store} = context
   store.dispatch('loadProjects')
+  store.dispatch('loadFeatures')
   store.dispatch('loadSocialLinks')
 
   // return new Promise((resolve, reject) => {

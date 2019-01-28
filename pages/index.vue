@@ -1,7 +1,7 @@
 <template>
   <section>
     <hero :data="loadedProjectsAtHero"/>
-    <features :data="features"/>
+    <features :data="loadedFeaturesSortedByOld"/>
     <v-divider/>
     <projects :data="loadedProjectsSortedByOld"/>
     <custom-project/>
@@ -47,8 +47,8 @@
     //   return { releases: data }
     // },
     async asyncData() {
-      const responseFeatures = await fetch('https://yehorpopov-db.firebaseio.com/features.json')
-      const features = await responseFeatures.json()
+      // const responseFeatures = await fetch('https://yehorpopov-db.firebaseio.com/features.json')
+      // const features = await responseFeatures.json()
       const responseHowItWorks = await fetch('https://yehorpopov-db.firebaseio.com/howItWorks.json')
       const howItWorks = await responseHowItWorks.json()
       const responseTeam = await fetch('https://yehorpopov-db.firebaseio.com/team.json')
@@ -56,7 +56,7 @@
       const responseContacts = await fetch('https://yehorpopov-db.firebaseio.com/contacts.json')
       const contacts = await responseContacts.json()
       return {
-        features,
+        // features,
         howItWorks,
         team,
         contacts
@@ -68,6 +68,9 @@
       },
       loadedProjectsSortedByOld () {
         return this.$store.getters.loadedProjectsSortedByOld
+      },
+      loadedFeaturesSortedByOld () {
+        return this.$store.getters.loadedFeaturesSortedByOld
       },
       loadedSocialLinksSortedByOld () {
         return this.$store.getters.loadedSocialLinksSortedByOld
