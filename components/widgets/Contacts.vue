@@ -1,12 +1,12 @@
 <template>
   <v-container py-0 class="MainContainer" id="contacts">
     <v-layout row wrap>
-      <v-flex xs12 class="mb80">
+      <v-flex xs12 class="mb40">
         <v-layout row wrap>
           <v-flex xs12>
             <div class="fs24 fw800 mb40">{{ data.title }}</div>
           </v-flex>
-          <v-flex xs4>
+          <v-flex xs12 sm4>
             <div class="mb20">
               <v-btn
                 class="ma-0 pa-0 mr-2"
@@ -21,13 +21,13 @@
                 <v-icon v-if="i.icon">{{ i.icon }}</v-icon>
               </v-btn>
             </div>
-            <div>{{ data.email }}</div>
+            <div class="mb40">{{ data.email }}</div>
           </v-flex>
-          <v-flex xs4>
-            <div>{{ data.phone }}</div>
+          <v-flex xs12 sm4>
+            <div class="mb40">{{ data.phone }}</div>
           </v-flex>
-          <v-flex xs4>
-            <div v-html="data.address"/>
+          <v-flex xs12 sm4>
+            <div class="mb40" v-html="data.address"/>
           </v-flex>
         </v-layout>
       </v-flex>
