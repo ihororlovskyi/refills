@@ -9,7 +9,7 @@
     <v-divider/>
     <works/>
     <v-divider/>
-    <team :dataStore="loadedTeamMembersSortedByOld" :dataFetch="loadedTeamMembersSortedByOld"/>
+    <team :dataStore="loadedTeamMembersSortedByOld" :dataFetch="team"/>
     <v-divider/>
     <contacts :data="contacts" :social="loadedSocialLinksSortedByOld" :map="true" class="mt200 mb200"/>
 
