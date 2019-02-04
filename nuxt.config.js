@@ -14,7 +14,7 @@ module.exports = {
     ]
   },
   loading: {
-    color: '#e8ca6a',
+    color: '#262626',
     height: '5px'
   },
   // mode: 'spa',

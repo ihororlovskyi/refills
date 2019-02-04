@@ -51,7 +51,7 @@
         title: 'Наши работы',
         position: 'Главный архитектор дизайн студии',
         btnLoadMore: {
-          text: 'Подзагрузить',
+          text: 'Больше',
           icon: 'mdi-chevron-down'
         },
 
