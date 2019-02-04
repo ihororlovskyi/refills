@@ -1,5 +1,5 @@
 <template>
-  <v-container py-0 class="MainContainer">
+  <v-container py-0 class="MainContainer" id="hero">
     <v-layout row wrap class="mb80">
       <v-flex xs12 md4>
         <div class="fs22 fw800 mb20 pr-4">“{{ message }}“</div>
