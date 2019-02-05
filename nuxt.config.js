@@ -7,8 +7,8 @@ module.exports = {
       { hid: "description", name: "description", content: "Studio Yehor Popov" }
     ],
     link: [
-      { rel: 'shortcut icon', href: 'https://firebasestorage.googleapis.com/v0/b/yehorpopov-db.appspot.com/o/favi%2Ffavicon-32.png?alt=media&token=a9c4f475-4997-46de-84d0-db23786177dc' },
-      { rel: 'apple-touch-icon', href: 'https://firebasestorage.googleapis.com/v0/b/yehorpopov-db.appspot.com/o/favi%2Ffavicon-144.jpg?alt=media&token=ce62c329-c57c-438d-9910-f9167c8f51c2' },
+      { rel: 'shortcut icon', href: 'https://firebasestorage.googleapis.com/v0/b/yehorpopov-db.appspot.com/o/favi%2Ffavicon-32-site.png?alt=media&token=3e5bf8f8-efce-4add-b128-ca391ce35719' },
+      { rel: 'apple-touch-icon', href: 'https://firebasestorage.googleapis.com/v0/b/yehorpopov-db.appspot.com/o/favi%2Ffavicon-144-site.jpg?alt=media&token=90fa595c-ff5d-4b8d-bcf7-e98057cf4dc9' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Montserrat:500,800|Material+Icons' },
       { rel: 'stylesheet', href: 'https://cdn.materialdesignicons.com/3.3.92/css/materialdesignicons.min.css' },
     ]
