@@ -32,10 +32,36 @@
         </v-layout>
       </v-flex>
       <v-flex xs12 v-if="map">
-        <iframe class="GoogleMap"
+        <!-- <iframe class="GoogleMap"
           :src="'https://www.google.com/maps/embed/v1/place?q=' + data.mapLocation + '&key=AIzaSyBETsKlJoUTKVLYIAe7O_CkVWwAsjiWhVw'"
           allowfullscreen
-        />
+        /> -->
+
+        <GmapMap
+          :center="{lat:50.4620758, lng:30.4960409}"
+          :zoom="16"
+          map-type-id="terrain"
+          style="width: 100%; height: 360px"
+          :options="{
+            zoomControl: true,
+            mapTypeControl: false,
+            scaleControl: false,
+            streetViewControl: false,
+            rotateControl: false,
+            fullscreenControl: true,
+            disableDefaultUi: false
+          }"
+        >
+          <GmapMarker
+            :key="index"
+            v-for="(m, index) in markers"
+            :position="m.position"
+            :clickable="true"
+            :draggable="true"
+            @click="center=m.position"
+          />
+        </GmapMap>
+
       </v-flex>
     </v-layout>
   </v-container>
@@ -52,8 +78,8 @@
 </script>
 
 <style lang="stylus">
-  .GoogleMap
-    width: 100%
-    height: 360px
-    border: none
+  // .GoogleMap
+  //   width: 100%
+  //   height: 360px
+  //   border: none
 </style>

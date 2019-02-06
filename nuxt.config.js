@@ -22,6 +22,7 @@ module.exports = {
     // { src: '~plugins/google-analytics.js', ssr: false },
     '~/plugins/vuetify.js',
     '~/plugins/fireauth.js',
+    { src: '~/plugins/vue2-google-maps.js', ssr: false },
     '~/plugins/vue-scrollactive.js'
   ],
   css: [
@@ -36,6 +37,9 @@ module.exports = {
     'vuetify'
   ],
   build: {
+    transpile: [
+      'vue2-google-maps'
+    ],
     extend (config, ctx) {
       if (ctx.isDev && ctx.isClient) {
         // config.module.rules.push({
