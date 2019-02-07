@@ -52,14 +52,14 @@
             disableDefaultUi: false
           }"
         >
-          <GmapMarker
+          <!-- <GmapMarker
             :key="index"
             v-for="(m, index) in markers"
             :position="m.position"
             :clickable="true"
             :draggable="true"
             @click="center=m.position"
-          />
+          /> -->
         </GmapMap>
 
       </v-flex>
