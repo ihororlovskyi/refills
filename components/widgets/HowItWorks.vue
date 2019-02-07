@@ -15,7 +15,7 @@
             <p v-if="i.description" v-for="ii in i.description" :key="i.p">{{ ii.p }}</p>
             <div v-if="!i.description">
               <order-dialog />
-              <download-presentation/>
+              <btn-download-presentation/>
             </div>
           </div>
         </v-flex>
@@ -26,12 +26,12 @@
 
 <script>
   import OrderDialog from '@/components/shared/OrderDialog'
-  import DownloadPresentation from '@/components/shared/DownloadPresentation'
+  import BtnDownloadPresentation from '@/components/shared/BtnDownloadPresentation'
 
   export default {
     components: {
       OrderDialog,
-      DownloadPresentation
+      BtnDownloadPresentation
     },
     props: [
       'data'

@@ -10,12 +10,12 @@
             <div class="mb-5" v-html="i.description"/>
             <div class="mb-4">{{ prePrice }} <b>{{ i.price }}</b></div>
             <div class="mb20">
-              <v-btn @click="onLoad(i.id)" depressed large class="mx-0" color="#262626" dark>
+              <v-btn @click="onLoad(i.id)" depressed large class="mx-0 pl60" color="#262626" dark>
                 {{ btnReadMore.text }}
                 <v-icon right small>{{ btnReadMore.icon }}</v-icon>
               </v-btn>
             </div>
-            <virtual-reality/>
+            <btn-virtual-reality/>
           </div>
         </v-flex>
         <v-flex xs12 sm8 class="mb80">
@@ -41,14 +41,14 @@
 </template>
 
 <script>
-  import VirtualReality from '@/components/shared/VirtualReality'
+  import BtnVirtualReality from '@/components/shared/BtnVirtualReality'
 
   export default {
     props: [
       'data'
     ],
     components: {
-      VirtualReality
+      BtnVirtualReality
     },
     data () {
       return {

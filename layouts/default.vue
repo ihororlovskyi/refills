@@ -47,7 +47,7 @@
                 <v-icon small color="#262626">{{ i.icon }}</v-icon>
               </a>
               <a class="hidden-md-and-up px-4" @click.stop="drawer = !drawer">
-                <v-icon small color="#262626">mdi-menu</v-icon>
+                <v-icon color="#262626">mdi-menu</v-icon>
               </a>
             </v-flex>
 

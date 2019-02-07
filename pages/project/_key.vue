@@ -42,8 +42,8 @@
           <v-layout row wrap>
             <v-flex xs3>
               <order-dialog/>
-              <download-presentation/>
-              <virtual-reality/>
+              <btn-download-presentation/>
+              <btn-virtual-reality/>
             </v-flex>
             <v-flex xs3 offset-xs1>
               <div v-html="release.description" class="mb20"/>
@@ -306,8 +306,8 @@
   import Contacts from '@/components/widgets/Contacts'
 
   import OrderDialog from '@/components/shared/OrderDialog'
-  import DownloadPresentation from '@/components/shared/DownloadPresentation'
-  import VirtualReality from '@/components/shared/VirtualReality'
+  import BtnDownloadPresentation from '@/components/shared/BtnDownloadPresentation'
+  import BtnVirtualReality from '@/components/shared/BtnVirtualReality'
 
   import axios from '~/plugins/axios'
   import fetch from 'isomorphic-fetch'
@@ -320,8 +320,8 @@
       HowItWorks,
       Contacts,
       OrderDialog,
-      DownloadPresentation,
-      VirtualReality
+      BtnDownloadPresentation,
+      BtnVirtualReality
     },
     data () {
       return {
