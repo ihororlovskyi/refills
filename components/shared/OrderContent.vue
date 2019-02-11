@@ -18,7 +18,8 @@
         />
       </div>
       <v-btn depressed large class="mx-0" color="#262626" dark>
-        <v-icon large left>{{ btnSend.icon }}</v-icon>
+        <!-- <v-icon large left>{{ btnSend.icon }}</v-icon> -->
+        <img :src="btnSend.img" alt="" width="25px" class="mr20">
         {{ btnSend.text }}
       </v-btn>
     </div>
@@ -34,7 +35,8 @@
         message: 'Оставьте свой номер телефона и мы в течении 1 дня подготовим Вам план перепланировки квартиры и этапы ремонта под дизайн проект Manhattan',
         name: 'Егор Попов',
         btnSend: {
-          icon: 'mdi-send',
+          // icon: 'mdi-send',
+          img: '/img/icons/send.svg',
           text: 'Отправить',
         }
       }

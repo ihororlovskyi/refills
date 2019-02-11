@@ -10,20 +10,18 @@
             <div class="mb-5" v-html="i.description"/>
             <div class="mb-4">{{ prePrice }} <b>{{ i.price }}</b></div>
             <div class="mb20">
-              <v-btn @click="onLoad(i.id)" depressed large class="mx-0 pl60" color="#262626" dark>
+              <v-btn @click="onLoad(i.id)" depressed large class="mx-0 pl40" color="#262626" dark style="width:230px">
                 {{ btnReadMore.text }}
                 <v-icon right small>{{ btnReadMore.icon }}</v-icon>
               </v-btn>
             </div>
-            <btn-virtual-reality/>
+            <btn-virtual-reality width="230px"/>
           </div>
         </v-flex>
         <v-flex xs12 sm8 class="mb80">
           <v-carousel
             hide-delimiters
             height="600"
-            next-icon="mdi-chevron-right-circle"
-            prev-icon="mdi-chevron-left-circle"
           >
             <v-carousel-item :src="i.imgCover"/>
             <v-carousel-item :src="i.imgCover"/>

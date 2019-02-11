@@ -5,7 +5,7 @@
 
         <v-flex xs12 class="mb40">
           <v-layout class="fs24 fw800" align-center>
-            <v-btn flat icon large :to="btnBack.linkto" class="ml-0 mt-1 mr-4 mb-0">
+            <v-btn flat icon large :to="btnBack.linkto" class="ml-0 mt-1 mr-4 mb-0" style="width:50px">
               <v-icon large>{{ btnBack.icon }}</v-icon>
             </v-btn>
             <h1 class="fs24 fw800">{{ preTitleText }} {{ release.title }}</h1>
@@ -16,8 +16,6 @@
           <v-carousel
             hide-delimiters
             height="600"
-            next-icon="mdi-chevron-right-circle"
-            prev-icon="mdi-chevron-left-circle"
         >
             <v-carousel-item
               v-for="i in content.sliderImages"
@@ -41,9 +39,9 @@
         <v-flex xs12 class="mb80">
           <v-layout row wrap>
             <v-flex xs3>
-              <order-dialog/>
-              <btn-download-presentation/>
-              <btn-virtual-reality/>
+              <order-dialog width="280px"/>
+              <btn-download-presentation width="280px"/>
+              <btn-virtual-reality width="280px"/>
             </v-flex>
             <v-flex xs3 offset-xs1>
               <div v-html="release.description" class="mb20"/>
@@ -65,7 +63,8 @@
 
         <v-flex xs12 class="mb80">
           <div class="fs24 fw800 mb-2">
-            <v-icon large class="mr-1">{{ vr.preTitleIcon }}</v-icon>
+            <!-- <v-icon large class="mr-1">{{ vr.preTitleIcon }}</v-icon> -->
+            <img :src="vr.preTitleImg" alt="" width="25px" class="mr20">
             <span class="ml-2">{{ vr.preTitleText }} {{ release.title }} {{ vr.afterTitleText }}</span>
           </div>
           <div v-html="vr.text" class="ml-5 mb40"/>
@@ -93,8 +92,6 @@
               <v-carousel
                 hide-delimiters
                 height="600"
-                next-icon="mdi-chevron-right-circle"
-                prev-icon="mdi-chevron-left-circle"
             >
                 <v-carousel-item
                   v-for="i in content.sliderImages"
@@ -143,8 +140,6 @@
               <v-carousel
                 hide-delimiters
                 height="600"
-                next-icon="mdi-chevron-right-circle"
-                prev-icon="mdi-chevron-left-circle"
           >
                 <v-carousel-item
                   v-for="i in content.sliderImages"
@@ -181,8 +176,6 @@
               <v-carousel
                 hide-delimiters
                 height="600"
-                next-icon="mdi-chevron-right-circle"
-                prev-icon="mdi-chevron-left-circle"
               >
                 <v-carousel-item
                   v-for="i in content.sliderImages"
@@ -266,8 +259,6 @@
               <v-carousel
                 hide-delimiters
                 height="600"
-                next-icon="mdi-chevron-right-circle"
-                prev-icon="mdi-chevron-left-circle"
               >
                 <v-carousel-item
                   v-for="i in content.plans"
@@ -337,7 +328,8 @@
           icon: 'mdi-chevron-right'
         },
         vr: {
-          preTitleIcon: 'mdi-virtual-reality',
+          // preTitleIcon: 'mdi-virtual-reality',
+          preTitleImg: '/img/icons/vr.svg',
           preTitleText: 'Проект',
           afterTitleText: 'в VR 360°',
           text: 'Рекомендуем просматривать с очками Cardboard 2. Все проекті моежем показать вам в очках у нас в офисе',
