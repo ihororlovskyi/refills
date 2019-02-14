@@ -404,7 +404,7 @@
         title: this.release.title,
         meta: [
           { name: 'description', content: this.release.title + ' project' },
-          { property: 'og:image', content: '' }
+          { property: 'og:image', content: 'https://firebasestorage.googleapis.com/v0/b/yehorpopov-db.appspot.com/o/og-images%2Fog-default.jpg?alt=media&token=9e1cdee4-d619-436b-a8bf-09b31cef09c0' }
         ]
       }
     }

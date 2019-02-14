@@ -61,7 +61,10 @@
         // grams: this.data.data,
         // next_url: this.data.pagination.next_url,
         // error: false
-        access_token: '9623749496.1677ed0.5cccdc1243a64052b555b888c62b7770',
+
+        // access_token: '9623749496.1677ed0.5cccdc1243a64052b555b888c62b7770',
+        access_token: '176908350.1677ed0.3c30032e917a430e8d1f65eae2223b1e',
+
         url: 'https://api.instagram.com/v1/users/self/media/recent/',
         username: '',
         grams: [],
