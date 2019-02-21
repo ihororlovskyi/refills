@@ -1,33 +1,31 @@
 <template>
   <section>
-    <!-- <hero :data="loadedProjectsAtHero"/> -->
-    <hero-zaglushka/>
+    <hero :data="loadedProjectsAtHero"/>
     <features :data="loadedFeaturesSortedByOld"/>
     <v-divider/>
-    <!-- <projects :data="loadedProjectsSortedByOld"/> -->
-    <!-- <custom-project/> -->
-    <!-- <how-it-works :data="howItWorks"/> -->
-    <!-- <v-divider/> -->
-    <!-- <works/> -->
-    <!-- <v-divider/> -->
-    <!-- <team :dataStore="loadedTeamMembersSortedByOld" :dataFetch="team"/> -->
-    <!-- <v-divider/> -->
-    <contacts :data="contacts" :social="loadedSocialLinksSortedByOld" :map="false" class="mt200 mb80"/>
+    <projects :data="loadedProjectsSortedByOld"/>
+    <custom-project/>
+    <how-it-works :data="howItWorks"/>
+    <v-divider/>
+    <works/>
+    <v-divider/>
+    <team :dataStore="loadedTeamMembersSortedByOld" :dataFetch="team"/>
+    <v-divider/>
+    <contacts :data="contacts" :social="loadedSocialLinksSortedByOld" :map="true" class="mt200 mb200"/>
 
-    <!-- <div style="padding-bottom:800px"/> -->
+    <div style="padding-bottom:800px"/>
 
   </section>
 </template>
 
 <script>
-  import HeroZaglushka from '@/components/widgets/HeroZaglushka'
-  // import Hero from '@/components/widgets/Hero'
+  import Hero from '@/components/widgets/Hero'
   import Features from '@/components/widgets/Features'
-  // import Projects from '@/components/widgets/Projects'
-  // import CustomProject from '@/components/widgets/CustomProject'
-  // import HowItWorks from '@/components/widgets/HowItWorks'
-  // import Works from '@/components/widgets/Works'
-  // import Team from '@/components/widgets/Team'
+  import Projects from '@/components/widgets/Projects'
+  import CustomProject from '@/components/widgets/CustomProject'
+  import HowItWorks from '@/components/widgets/HowItWorks'
+  import Works from '@/components/widgets/Works'
+  import Team from '@/components/widgets/Team'
   import Contacts from '@/components/widgets/Contacts'
 
   import axios from '~/plugins/axios'
@@ -35,14 +33,13 @@
 
   export default {
     components: {
-      HeroZaglushka,
-      // Hero,
+      Hero,
       Features,
-      // Projects,
-      // CustomProject,
-      // HowItWorks,
-      // Works,
-      // Team,
+      Projects,
+      CustomProject,
+      HowItWorks,
+      Works,
+      Team,
       Contacts
     },
     // async asyncData() {
@@ -52,35 +49,35 @@
     async asyncData() {
       // const responseFeatures = await fetch('https://yehorpopov-db.firebaseio.com/features.json')
       // const features = await responseFeatures.json()
-      // const responseHowItWorks = await fetch('https://yehorpopov-db.firebaseio.com/howItWorks.json')
-      // const howItWorks = await responseHowItWorks.json()
-      // const responseTeam = await fetch('https://yehorpopov-db.firebaseio.com/team.json')
-      // const team = await responseTeam.json()
+      const responseHowItWorks = await fetch('https://yehorpopov-db.firebaseio.com/howItWorks.json')
+      const howItWorks = await responseHowItWorks.json()
+      const responseTeam = await fetch('https://yehorpopov-db.firebaseio.com/team.json')
+      const team = await responseTeam.json()
       const responseContacts = await fetch('https://yehorpopov-db.firebaseio.com/contacts.json')
       const contacts = await responseContacts.json()
       return {
         // features,
-        // howItWorks,
-        // team,
+        howItWorks,
+        team,
         contacts
       }
     },
     computed: {
-      // loadedProjectsAtHero () {
-      //   return this.$store.getters.loadedProjectsAtHero
-      // },
-      // loadedProjectsSortedByOld () {
-      //   return this.$store.getters.loadedProjectsSortedByOld
-      // },
+      loadedProjectsAtHero () {
+        return this.$store.getters.loadedProjectsAtHero
+      },
+      loadedProjectsSortedByOld () {
+        return this.$store.getters.loadedProjectsSortedByOld
+      },
       loadedFeaturesSortedByOld () {
         return this.$store.getters.loadedFeaturesSortedByOld
       },
       loadedSocialLinksSortedByOld () {
         return this.$store.getters.loadedSocialLinksSortedByOld
       },
-      // loadedTeamMembersSortedByOld () {
-      //   return this.$store.getters.loadedTeamMembersSortedByOld
-      // }
+      loadedTeamMembersSortedByOld () {
+        return this.$store.getters.loadedTeamMembersSortedByOld
+      }
     },
     head: {
       title: 'Home',
