@@ -1,7 +1,7 @@
 <template>
   <v-app>
 
-    <v-container fluid pa-0 class="Header">
+    <v-container fluid pa-0 class="Header" v-if="headerHello">
       <v-container py-0 class="MainContainer">
 
         <scrollactive
@@ -64,7 +64,8 @@
                 </a>
                 <a class="hidden-sm-and-up px-4" @click.stop="drawer = !drawer">
                   <v-icon color="#262626">mdi-menu</v-icon>
-                </a>              </v-layout>
+                </a>
+              </v-layout>
             </v-flex>
 
           </v-layout>
@@ -72,8 +73,8 @@
       </v-container>
     </v-container>
 
-    <v-content class="mt80">
-      <nuxt/>
+    <v-content>
+      <nuxt v-scroll="onScroll"/>
     </v-content>
 
     <v-navigation-drawer
@@ -158,9 +159,11 @@
     data () {
       return {
         drawer: false,
+        offsetTop: 0,
+        headerHello: false,
         home: {
           title: 'Studio Yehor Popov',
-          logo: 'https://firebasestorage.googleapis.com/v0/b/yehorpopov-db.appspot.com/o/logo%2Fstudio-yehor-popov-logo.svg?alt=media&token=58e9c479-edf3-473d-8553-49d4327c266a',
+          logo: 'https://firebasestorage.googleapis.com/v0/b/yehorpopov-db.appspot.com/o/logo%2Fstudio-yehor-popov-logo-dark.svg?alt=media&token=0db77e06-8c22-4c39-a4f9-0acb58b1b759',
           url: '/',
           anchor: '#hero'
         },
@@ -203,6 +206,14 @@
     },
     methods: {
       onItemChanged(event, currentItem, lastActiveItem) {
+      },
+      onScroll (e) {
+        this.offsetTop = window.pageYOffset || document.documentElement.scrollTop
+        if (this.offsetTop > 80) {
+          return this.headerHello = true
+        } else {
+          return this.headerHello = false
+        }
       }
     }
   }
