@@ -28,7 +28,7 @@
                 </v-layout>
               </v-flex>
               <v-flex xs12 class="text-xs-center">
-                <v-btn large>{{ btnReadMore.text }}</v-btn>
+                <div class="ComingSoon fw800">{{ comingSoon }}</div>
               </v-flex>
             </v-layout>
           </v-container>
@@ -55,10 +55,7 @@
         userpic: 'https://firebasestorage.googleapis.com/v0/b/yehorpopov-db.appspot.com/o/hero%2Fpopov.png?alt=media&token=adec7907-af91-4cd6-8075-d9aaf587ffdd',
         yehorpopov: 'Егор Попов',
         position: 'Главный архитектор дизайн студии',
-        btnReadMore: {
-          text: 'Все наши проекты вы сможете увидеть уже 1 марта',
-          // icon: 'mdi-chevron-right'
-        }
+        comingSoon: 'Все наши проекты вы сможете увидеть уже 1 марта'
       }
     }
   }
@@ -80,4 +77,10 @@
       margin: 0 14px
     .v-parallax__content
       padding: 0
+    .ComingSoon
+      background-color: #fff
+      color: #262626
+      display: inline-block
+      padding: 10px 20px
+      border-radius: 4px
 </style>
