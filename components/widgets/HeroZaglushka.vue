@@ -1,40 +1,42 @@
 <template>
   <v-container fluid pa-0 class="mb80">
-    <v-layout row wrap>
-      <v-flex xs12>
-        <v-parallax dark :src="background" height="620">
-          <div class="my-black-mask"/>
-          <!-- <app-header/> -->
-          <v-container pa-0 style="z-index:1">
-            <v-layout
-              align-center
-              wrap
-              align-content-space-around
-              style="height: 100%;"
-            >
-              <v-flex xs12 md8>
-                <div class="fs22 fw800">{{ message }}</div>
-              </v-flex>
-              <v-flex xs12 md4>
-                <v-layout align-center>
-                  <div class="my-white-line"/>
-                  <v-avatar size="80">
-                    <v-img :src="userpic" :alt="yehorpopov"/>
-                  </v-avatar>
-                  <div class="ml-1">
-                    <div>{{ yehorpopov }}</div>
-                    <div class="fs12">{{ position }}</div>
-                  </div>
-                </v-layout>
-              </v-flex>
-              <v-flex xs12 class="text-xs-center">
-                <v-btn large>{{ btnReadMore.text }}</v-btn>
-              </v-flex>
-            </v-layout>
-          </v-container>
-        </v-parallax>
-      </v-flex>
-    </v-layout>
+    <!-- <v-container pa-0 class="mb80"> -->
+      <v-layout row wrap>
+        <v-flex xs12>
+          <v-parallax dark :src="background" height="620">
+            <div class="my-black-mask"/>
+            <!-- <app-header/> -->
+            <v-container pa-0 style="z-index:1" class="MainContainer">
+              <v-layout
+                align-center
+                wrap
+                align-content-space-around
+                style="height: 100%;"
+              >
+                <v-flex xs12 md8>
+                  <div class="fs22 fw800">{{ message }}</div>
+                </v-flex>
+                <v-flex xs12 md4>
+                  <v-layout align-center>
+                    <div class="my-white-line"/>
+                    <v-avatar size="80">
+                      <v-img :src="userpic" :alt="yehorpopov"/>
+                    </v-avatar>
+                    <div class="ml-1">
+                      <div>{{ yehorpopov }}</div>
+                      <div class="fs12">{{ position }}</div>
+                    </div>
+                  </v-layout>
+                </v-flex>
+                <v-flex xs12 class="text-xs-center">
+                  <v-btn large>{{ btnReadMore.text }}</v-btn>
+                </v-flex>
+              </v-layout>
+            </v-container>
+          </v-parallax>
+        </v-flex>
+      </v-layout>
+    <!-- </v-container> -->
   </v-container>
 </template>
 
@@ -50,7 +52,7 @@
     ],
     data () {
       return {
-        background: 'https://firebasestorage.googleapis.com/v0/b/yehorpopov-db.appspot.com/o/hero%2Fzaglushka.jpg?alt=media&token=c4a7de76-59d3-4cdb-bd29-5905ade8c695',
+        background: 'https://firebasestorage.googleapis.com/v0/b/yehorpopov-db.appspot.com/o/hero%2Fzaglushka2.jpg?alt=media&token=6930edfb-dcf3-47ca-9b34-a43a1aea5a29',
         message: 'Я ищу равновесие между функциональностью и эстетикой. Этот баланс создаёт гармоничное пространствоб вне зависимости от количества квадратных метров',
         userpic: 'https://firebasestorage.googleapis.com/v0/b/yehorpopov-db.appspot.com/o/hero%2Fpopov.png?alt=media&token=adec7907-af91-4cd6-8075-d9aaf587ffdd',
         yehorpopov: 'Егор Попов',

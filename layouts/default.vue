@@ -27,28 +27,44 @@
             </v-flex>
 
             <v-flex class="hidden-sm-and-down" v-if="$route.path === '/'">
-              <a class="scrollactive-item scrollactive-item--select px-3"
-                v-for="i in menu"
-                :key="i.anchor"
-                :href="i.anchor"
-                v-ripple
-              >{{ i.title }}</a>
+              <v-layout>
+                <!-- <a class="scrollactive-item scrollactive-item--select px-3"
+                  v-for="i in menu"
+                  :key="i.anchor"
+                  :href="i.anchor"
+                  v-ripple
+                >{{ i.title }}</a> -->
+              </v-layout>
             </v-flex>
 
-            <v-flex class="text-xs-right">
-              <a class="hidden-md-and-down px-3" :href="'tel:' + phone.href">{{ phone.text }}</a>
-              <a class="hidden-sm-and-down px-2"
-                v-for="i in loadedSocialLinksSortedByOld"
-                :key="i.key"
-                :href="i.link"
-                target="_blank"
-                v-ripple
-              >
-                <v-icon small color="#262626">{{ i.icon }}</v-icon>
-              </a>
-              <a class="hidden-md-and-up px-4" @click.stop="drawer = !drawer">
-                <v-icon color="#262626">mdi-menu</v-icon>
-              </a>
+            <v-flex>
+              <v-layout justify-end>
+                <!-- <a class="hidden-md-and-down px-3" :href="'tel:' + phone.href">{{ phone.text }}</a>
+                <a class="hidden-sm-and-down px-2"
+                  v-for="i in loadedSocialLinksSortedByOld"
+                  :key="i.key"
+                  :href="i.link"
+                  target="_blank"
+                  v-ripple
+                >
+                  <v-icon small color="#262626">{{ i.icon }}</v-icon>
+                </a>
+                <a class="hidden-md-and-up px-4" @click.stop="drawer = !drawer">
+                  <v-icon color="#262626">mdi-menu</v-icon>
+                </a> -->
+                <a class="hidden-xs-only px-3" :href="'tel:' + phone.href">{{ phone.text }}</a>
+                <a class="hidden-xs-only px-2"
+                  v-for="i in loadedSocialLinksSortedByOld"
+                  :key="i.key"
+                  :href="i.link"
+                  target="_blank"
+                  v-ripple
+                >
+                  <v-icon small color="#262626">{{ i.icon }}</v-icon>
+                </a>
+                <a class="hidden-sm-and-up px-4" @click.stop="drawer = !drawer">
+                  <v-icon color="#262626">mdi-menu</v-icon>
+                </a>              </v-layout>
             </v-flex>
 
           </v-layout>
@@ -56,7 +72,7 @@
       </v-container>
     </v-container>
 
-    <v-content class="mt100">
+    <v-content class="mt80">
       <nuxt/>
     </v-content>
 
@@ -69,14 +85,14 @@
       <v-list>
         <v-list-tile exact :to="home.url">
           <v-list-tile-action>
-            <v-icon large color="#262626">{{ home.icon }}</v-icon>
+            <img :src="home.logo" :alt="home.title" width="32px"/>
           </v-list-tile-action>
           <v-list-tile-content>
             <v-list-tile-title>{{ home.title }}</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
 
-        <v-divider/>
+        <!-- <v-divider/>
 
         <v-subheader>Проекты</v-subheader>
 
@@ -93,7 +109,7 @@
           <v-list-tile-content>
             <v-list-tile-title>{{ i.title }}</v-list-tile-title>
           </v-list-tile-content>
-        </v-list-tile>
+        </v-list-tile> -->
 
         <v-divider/>
 
@@ -199,10 +215,11 @@
     background-color: #fff
     width: 100%
     a
-      display: inline-flex
+      display: flex
       justify-content: flex-start
       align-items: center
       height: 80px
+      max-width: 220px
       text-decoration: none
       transition: background-color .5s ease
       color: #262626
