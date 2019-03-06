@@ -62,7 +62,7 @@
                 >
                   <v-icon small color="#262626">{{ i.icon }}</v-icon>
                 </a>
-                <a class="hidden-sm-and-up px-4" @click.stop="drawer = !drawer">
+                <a class="hidden-sm-and-up px-4" @click="handleClick">
                   <v-icon color="#262626">mdi-menu</v-icon>
                 </a>
               </v-layout>
@@ -78,7 +78,7 @@
     </v-content>
 
     <v-navigation-drawer
-      v-model="drawer"
+      v-model="sidebarOpen"
       app
       right
       disable-resize-watcher
@@ -158,7 +158,7 @@
   export default {
     data () {
       return {
-        drawer: false,
+        // drawer: false,
         offsetTop: 0,
         headerHello: false,
         home: {
@@ -191,7 +191,7 @@
         ],
         phone: {
           icon: 'mdi-phone',
-          href: '+380951263680',
+          href: '+380667677171',
           text: '+380 66 767 71 71'
         }
       }
@@ -202,6 +202,9 @@
       },
       loadedProjectsSortedByOld () {
         return this.$store.getters.loadedProjectsSortedByOld
+      },
+      sidebarOpen () {
+        return this.$store.state.mobmenu.sidebarOpen
       }
     },
     methods: {
@@ -214,6 +217,9 @@
         } else {
           return this.headerHello = false
         }
+      },
+      handleClick () {
+        this.$store.dispatch('toggleSidebar')
       }
     }
   }

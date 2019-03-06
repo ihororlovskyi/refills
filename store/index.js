@@ -5,17 +5,19 @@ import projects from './projects'
 import features from './features'
 import team from './team'
 import social from './social'
+import mobmenu from './mobmenu'
 
 Vue.use(Vuex)
 
 const store = () => {
   return new Vuex.Store({
      modules: {
-      loading: loading,
-      projects: projects,
-      features: features,
-      team: team,
-      social: social
+      loading,
+      projects,
+      features,
+      team,
+      social,
+      mobmenu: mobmenu
     }
    })
 }

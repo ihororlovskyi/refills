@@ -36,7 +36,8 @@
                 >
                   <v-icon small color="#fff">{{ i.icon }}</v-icon>
                 </a>
-                <a class="hidden-sm-and-up px-4" @click.stop="drawer = !drawer">
+
+                <a class="hidden-sm-and-up px-4" @click="handleClick">
                   <v-icon color="#fff">mdi-menu</v-icon>
                 </a>
               </v-layout>
@@ -54,7 +55,7 @@
   export default {
     data () {
       return {
-        drawer: false,
+        // drawer: false,
         home: {
           title: 'Studio Yehor Popov',
           logo: 'https://firebasestorage.googleapis.com/v0/b/yehorpopov-db.appspot.com/o/logo%2Fstudio-yehor-popov-logo-white.svg?alt=media&token=1fc33f91-1f15-4c5a-a646-3121db009370',
@@ -85,8 +86,8 @@
         ],
         phone: {
           icon: 'mdi-phone',
-          href: '+380951263680',
-          text: '+380 95 126 36 80'
+          href: '+380667677171',
+          text: '+380 66 767 71 71'
         }
       }
     },
@@ -96,10 +97,19 @@
       },
       loadedProjectsSortedByOld () {
         return this.$store.getters.loadedProjectsSortedByOld
-      }
+      },
+      // sidebarOpen () {
+      //   return this.$store.state.mobmenu.sidebarOpen
+      // }
     },
     methods: {
       onItemChanged(event, currentItem, lastActiveItem) {
+      },
+      onCancel () {
+        this.$router.push('/features')
+      },
+      handleClick () {
+        this.$store.dispatch('toggleSidebar')
       }
     }
   }
