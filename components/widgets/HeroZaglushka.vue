@@ -5,7 +5,7 @@
         <v-parallax dark :src="background" height="620">
           <div class="my-black-mask"/>
           <v-container py-0 style="z-index:1" class="MainContainer">
-            <app-header/>
+            <header-inner/>
             <v-layout
               align-center
               wrap
@@ -39,11 +39,11 @@
 </template>
 
 <script>
-  import AppHeader from '@/components/widgets/Header'
+  import HeaderInner from '@/components/widgets/HeaderInner'
 
   export default {
     components: {
-      AppHeader,
+      HeaderInner,
     },
     props: [
       'data'
