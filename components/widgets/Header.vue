@@ -14,12 +14,12 @@
           <v-layout>
             <v-flex xs8 sm6 md4>
               <a class="scrollactive-item fw800 px-3" :href="home.anchor" v-ripple v-if="$route.path === '/'">
-                <img :src="home.logo" :alt="home.title" width="25px"/>
+                <img :src="home.logoWhite" :alt="home.title" width="25px"/>
                 <span class="ml-3">{{ home.title }}</span>
               </a>
 
               <router-link class="fw800 px-3" :to="home.url" v-ripple v-else>
-                <img :src="home.logo" :alt="home.title" width="25px"/>
+                <img :src="home.logoWhite" :alt="home.title" width="25px"/>
                 <span class="ml-3">{{ home.title }}</span>
               </router-link>
             </v-flex>
@@ -53,44 +53,6 @@
 
 <script>
   export default {
-    data () {
-      return {
-        // drawer: false,
-        home: {
-          title: 'Studio Yehor Popov',
-          logo: 'https://firebasestorage.googleapis.com/v0/b/yehorpopov-db.appspot.com/o/logo%2Fstudio-yehor-popov-logo-white.svg?alt=media&token=1fc33f91-1f15-4c5a-a646-3121db009370',
-          url: '/',
-          anchor: '#hero'
-        },
-        menu: [
-          {
-            title: 'Проекты',
-            anchor: '#projects'
-          },
-          {
-            title: 'Как мы работаем',
-            anchor: '#howitworks'
-          },
-          // {
-          //   title: 'Наши работы',
-          //   anchor: '#works'
-          // },
-          {
-            title: 'Команда',
-            anchor: '#team'
-          },
-          {
-            title: 'Контакты',
-            anchor: '#contacts'
-          }
-        ],
-        phone: {
-          icon: 'mdi-phone',
-          href: '+380667677171',
-          text: '+380 66 767 71 71'
-        }
-      }
-    },
     computed: {
       loadedSocialLinksSortedByOld () {
         return this.$store.getters.loadedSocialLinksSortedByOld
@@ -98,9 +60,15 @@
       loadedProjectsSortedByOld () {
         return this.$store.getters.loadedProjectsSortedByOld
       },
-      // sidebarOpen () {
-      //   return this.$store.state.mobmenu.sidebarOpen
-      // }
+      home () {
+        return this.$store.state.mobmenu.home
+      },
+      menu () {
+        return this.$store.state.mobmenu.menu
+      },
+      phone () {
+        return this.$store.state.mobmenu.phone
+      }
     },
     methods: {
       onItemChanged(event, currentItem, lastActiveItem) {

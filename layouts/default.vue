@@ -16,12 +16,12 @@
           <v-layout>
             <v-flex xs8 sm6 md4>
               <a class="scrollactive-item fw800 px-3" :href="home.anchor" v-ripple v-if="$route.path === '/'">
-                <img :src="home.logo" :alt="home.title" width="25px"/>
+                <img :src="home.logoDark" :alt="home.title" width="25px"/>
                 <span class="ml-3">{{ home.title }}</span>
               </a>
 
               <router-link class="fw800 px-3" :to="home.url" v-ripple v-else>
-                <img :src="home.logo" :alt="home.title" width="25px"/>
+                <img :src="home.logoDark" :alt="home.title" width="25px"/>
                 <span class="ml-3">{{ home.title }}</span>
               </router-link>
             </v-flex>
@@ -77,123 +77,22 @@
       <nuxt v-scroll="onScroll"/>
     </v-content>
 
-    <v-navigation-drawer
-      v-model="sidebarOpen"
-      app
-      right
-      disable-resize-watcher
-    >
-      <v-list>
-        <v-list-tile exact :to="home.url">
-          <v-list-tile-action>
-            <img :src="home.logo" :alt="home.title" width="32px"/>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>{{ home.title }}</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-
-        <!-- <v-divider/>
-
-        <v-subheader>Проекты</v-subheader>
-
-        <v-list-tile
-          v-for="i in loadedProjectsSortedByOld"
-          :key="i.key"
-          :to="'/project/' + i.id + '/'"
-        >
-          <v-list-tile-action>
-            <v-avatar size="34">
-              <v-img :src="i.imgCover" :alt="i.title"/>
-            </v-avatar>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>{{ i.title }}</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile> -->
-
-        <v-divider/>
-
-        <v-subheader>Следите за нами</v-subheader>
-
-        <v-list-tile
-          v-for="i in loadedSocialLinksSortedByOld"
-          :key="i.key"
-          :href="i.link"
-          target="_blank"
-        >
-          <v-list-tile-action>
-            <v-icon color="#262626">{{ i.icon }}</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>{{ i.title }}</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-
-        <v-divider/>
-
-        <v-subheader>Быстрая связь</v-subheader>
-
-        <v-list-tile
-          :href="'tel:' + phone.href"
-          target="_blank"
-        >
-          <v-list-tile-action>
-            <v-icon color="#262626">{{ phone.icon }}</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>{{ phone.text }}</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-
-        <v-divider/>
-
-      </v-list>
-    </v-navigation-drawer>
+    <mob-menu/>
 
   </v-app>
 </template>
 
 <script>
+  import MobMenu from '@/components/widgets/MobMenu'
+
   export default {
+    components: {
+      MobMenu
+    },
     data () {
       return {
-        // drawer: false,
-        offsetTop: 0,
         headerHello: false,
-        home: {
-          title: 'Studio Yehor Popov',
-          logo: 'https://firebasestorage.googleapis.com/v0/b/yehorpopov-db.appspot.com/o/logo%2Fstudio-yehor-popov-logo-dark.svg?alt=media&token=0db77e06-8c22-4c39-a4f9-0acb58b1b759',
-          url: '/',
-          anchor: '#hero'
-        },
-        menu: [
-          {
-            title: 'Проекты',
-            anchor: '#projects'
-          },
-          {
-            title: 'Как мы работаем',
-            anchor: '#howitworks'
-          },
-          // {
-          //   title: 'Наши работы',
-          //   anchor: '#works'
-          // },
-          {
-            title: 'Команда',
-            anchor: '#team'
-          },
-          {
-            title: 'Контакты',
-            anchor: '#contacts'
-          }
-        ],
-        phone: {
-          icon: 'mdi-phone',
-          href: '+380667677171',
-          text: '+380 66 767 71 71'
-        }
+        offsetTop: 0
       }
     },
     computed: {
@@ -205,6 +104,15 @@
       },
       sidebarOpen () {
         return this.$store.state.mobmenu.sidebarOpen
+      },
+      home () {
+        return this.$store.state.mobmenu.home
+      },
+      menu () {
+        return this.$store.state.mobmenu.menu
+      },
+      phone () {
+        return this.$store.state.mobmenu.phone
       }
     },
     methods: {
