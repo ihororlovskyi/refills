@@ -55,7 +55,7 @@
         userpic: 'https://firebasestorage.googleapis.com/v0/b/yehorpopov-db.appspot.com/o/hero%2Fpopov.png?alt=media&token=adec7907-af91-4cd6-8075-d9aaf587ffdd',
         yehorpopov: 'Егор Попов',
         position: 'Главный архитектор дизайн студии',
-        comingSoon: 'Все наши проекты вы сможете увидеть уже 1 марта'
+        comingSoon: 'Все наши проекты вы сможете увидеть уже 15 марта'
       }
     }
   }
