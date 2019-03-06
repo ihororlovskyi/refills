@@ -7,6 +7,13 @@
             <div class="fs24 fw800 mb40">{{ data.title }}</div>
           </v-flex>
           <v-flex xs12 sm4>
+            <div class="mb40">{{ data.email }}</div>
+          </v-flex>
+          <v-flex xs12 sm4>
+            <div class="mb40">{{ data.phone }}</div>
+          </v-flex>
+          <v-flex xs12 sm4>
+            <!-- <div class="mb40" v-html="data.address"/> -->
             <div class="mb20">
               <v-btn
                 class="ma-0 pa-0 mr-2"
@@ -21,13 +28,6 @@
                 <v-icon v-if="i.icon">{{ i.icon }}</v-icon>
               </v-btn>
             </div>
-            <div class="mb40">{{ data.email }}</div>
-          </v-flex>
-          <v-flex xs12 sm4>
-            <div class="mb40">{{ data.phone }}</div>
-          </v-flex>
-          <v-flex xs12 sm4>
-            <div class="mb40" v-html="data.address"/>
           </v-flex>
         </v-layout>
       </v-flex>
