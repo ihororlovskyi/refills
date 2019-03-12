@@ -13,9 +13,7 @@
     <!-- <team :dataStore="loadedTeamMembersSortedByOld" :dataFetch="team"/> -->
     <!-- <v-divider/> -->
     <contacts :data="contacts" :social="loadedSocialLinksSortedByOld" :map="false" class="mt200 mb80"/>
-
     <!-- <div style="padding-bottom:800px"/> -->
-
   </section>
 </template>
 
