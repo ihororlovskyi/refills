@@ -2,7 +2,7 @@
   <v-container py-0 class="MainContainer" id="hero">
     <v-layout row wrap class="mb80">
       <v-flex xs12 md4>
-        <div class="fs22 fw800 mb20 pr-4">“{{ message }}“</div>
+        <div class="fs22 fw800 mb20 pr-4">«{{ dataHero.messageHome }}»</div>
         <v-layout row align-center class="mb40 pr-4">
           <v-avatar size="80">
             <v-img :src="userpic" alt="userpic"/>
@@ -15,7 +15,7 @@
       </v-flex>
       <v-flex xs12 md8>
         <v-layout row wrap>
-          <v-flex xs4 v-for="i in data" :key="i.id">
+          <v-flex xs4 v-for="i in dataProjects" :key="i.id">
 
             <v-img class="topImgItem" :src="i.imgCover" @click="onLoad(i.id)" v-ripple style="cursor:pointer">
               <!-- <v-layout column fill-height>
@@ -55,11 +55,12 @@
 <script>
   export default {
     props: [
-      'data'
+      'dataHero',
+      'dataProjects'
     ],
     data () {
       return {
-        message: 'Выберите дизайн проект, а мы сделаем перепланировку, ремонт и архитекторский надзор за 60 дней',
+        // message: 'Выберите дизайн проект, а мы сделаем перепланировку, ремонт и архитекторский надзор за 60 дней',
         userpic: 'https://images.unsplash.com/photo-1495147334217-fcb3445babd5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=160&h=160&q=69',
         yehorpopov: 'Егор Попов',
         position: 'Главный архитектор дизайн студии',

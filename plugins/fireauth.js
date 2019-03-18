@@ -2,6 +2,7 @@
 
 export default (context) => {
   const { store } = context
+  store.dispatch('loadHero')
   store.dispatch('loadProjects')
   store.dispatch('loadFeatures')
   store.dispatch('loadSocialLinks')

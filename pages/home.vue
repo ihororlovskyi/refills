@@ -1,6 +1,6 @@
 <template>
   <section>
-    <hero :data="loadedProjectsAtHero"/>
+    <hero-home :dataProjects="loadedProjectsAtHero" :dataHero="loadedHero"/>
     <features :data="loadedFeaturesSortedByOld"/>
     <v-divider/>
     <projects :data="loadedProjectsSortedByOld"/>
@@ -17,7 +17,7 @@
 </template>
 
 <script>
-  import Hero from '@/components/widgets/Hero'
+  import HeroHome from '@/components/widgets/HeroHome'
   import Features from '@/components/widgets/Features'
   import Projects from '@/components/widgets/Projects'
   import CustomProject from '@/components/widgets/CustomProject'
@@ -31,7 +31,7 @@
 
   export default {
     components: {
-      Hero,
+      HeroHome,
       Features,
       Projects,
       CustomProject,
@@ -61,6 +61,9 @@
       }
     },
     computed: {
+      loadedHero () {
+        return this.$store.getters.loadedHero
+      },
       loadedProjectsAtHero () {
         return this.$store.getters.loadedProjectsAtHero
       },

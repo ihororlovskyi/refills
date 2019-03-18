@@ -13,7 +13,7 @@
               style="height: calc(100% - 80px);"
             >
               <v-flex xs12 md8>
-                <div class="fs22 fw800">{{ message }}</div>
+                <div class="fs22 fw800">«{{ dataHero.messageZaglushka }}»</div>
               </v-flex>
               <v-flex xs12 md4>
                 <v-layout align-center>
@@ -46,12 +46,12 @@
       HeaderInner,
     },
     props: [
-      'data'
+      'dataHero'
     ],
     data () {
       return {
         background: 'https://firebasestorage.googleapis.com/v0/b/yehorpopov-db.appspot.com/o/hero%2Fzaglushka2.jpg?alt=media&token=6930edfb-dcf3-47ca-9b34-a43a1aea5a29',
-        message: '«Равновесие между функцией, эстетикой и стоимостью реализации. Этот баланс позволяет создать гармоничное пространство вне зависимости от количества квадратных метров»',
+        // message: 'Равновесие между функцией, эстетикой и стоимостью реализации. Этот баланс позволяет создать гармоничное пространство вне зависимости от количества квадратных метров»',
         userpic: 'https://firebasestorage.googleapis.com/v0/b/yehorpopov-db.appspot.com/o/hero%2Fpopov.png?alt=media&token=adec7907-af91-4cd6-8075-d9aaf587ffdd',
         yehorpopov: 'Егор Попов',
         position: 'Главный архитектор дизайн студии',

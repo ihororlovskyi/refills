@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import loading from './loading'
+import hero from './hero'
 import projects from './projects'
 import features from './features'
 import team from './team'
@@ -13,11 +14,12 @@ const store = () => {
   return new Vuex.Store({
      modules: {
       loading,
+      hero,
       projects,
       features,
       team,
       social,
-      mobmenu: mobmenu
+      mobmenu
     }
    })
 }

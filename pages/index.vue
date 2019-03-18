@@ -1,7 +1,7 @@
 <template>
   <section>
     <!-- <hero :data="loadedProjectsAtHero"/> -->
-    <hero-zaglushka/>
+    <hero-zaglushka :dataHero="loadedHero"/>
     <features :data="loadedFeaturesSortedByOld"/>
     <v-divider/>
     <!-- <projects :data="loadedProjectsSortedByOld"/> -->
@@ -64,9 +64,9 @@
       }
     },
     computed: {
-      // loadedProjectsAtHero () {
-      //   return this.$store.getters.loadedProjectsAtHero
-      // },
+      loadedHero () {
+        return this.$store.getters.loadedHero
+      },
       // loadedProjectsSortedByOld () {
       //   return this.$store.getters.loadedProjectsSortedByOld
       // },
@@ -81,9 +81,9 @@
       // }
     },
     head: {
-      title: 'Home',
+      title: 'Coming Soon',
       meta: [
-        { name: 'description', content: 'Home page of Studio Yehor Popov' },
+        { name: 'description', content: 'Coming Soon page of Studio Yehor Popov' },
         { property: 'og:image', content: 'https://firebasestorage.googleapis.com/v0/b/yehorpopov-db.appspot.com/o/og-images%2Fog-default.jpg?alt=media&token=9e1cdee4-d619-436b-a8bf-09b31cef09c0' }
       ]
     }
