@@ -3,34 +3,22 @@ import firebase, { DB } from '@/services/fireinit.js'
 export default {
 
   state: {
-    loadedTeamMembers: []
+    loadedTeam: []
   },
 
   mutations: {
-    setLoadedTeamMembers (state, payload) {
-      state.loadedTeamMembers = payload
+    setLoadedTeam (state, payload) {
+      state.loadedTeam = payload
     }
   },
 
   actions: {
-    loadTeamMembers ({commit}) {
+    loadTeam ({commit}) {
       commit('setLoading', true)
-      firebase.database().ref('team/list').once('value')
+      firebase.database().ref('team').once('value')
         .then((data) => {
-          const items = []
-          const obj = data.val()
-          for (let key in obj) {
-            items.push({
-              id: key,
-              name: obj[key].name,
-              isPublished: obj[key].isPublished,
-              position: obj[key].position,
-              photo: obj[key].photo,
-              quote: obj[key].quote,
-              date: obj[key].date
-            })
-          }
-          commit('setLoadedTeamMembers', items)
+          const teamContent = data.val()
+          commit('setLoadedTeam', teamContent)
           commit('setLoading', false)
         })
         .catch(
@@ -43,18 +31,8 @@ export default {
   },
 
   getters: {
-    loadedTeamMembers (state) {
-      return state.loadedTeamMembers.filter((project) => {
-        return project.isPublished
-      })
-    },
-    loadedTeamMembersSortedByOld (state, getters) {
-      return getters.loadedTeamMembers.sort((itemA, itemB) => {
-        return new Date(itemA.date) - new Date(itemB.date)
-      })
-    },
-    loadedTeamMembersSortedByNew (state, getters) {
-      return getters.loadedTeamMembersSortedByOld.reverse()
+    loadedTeam (state) {
+      return state.loadedTeam
     }
   }
 

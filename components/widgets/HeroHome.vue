@@ -2,7 +2,7 @@
   <v-container py-0 class="MainContainer" id="hero">
     <v-layout row wrap class="mb80">
       <v-flex xs12 md4>
-        <div class="fs22 fw800 mb20 pr-4">«{{ dataHero.messageHome }}»</div>
+        <div class="fs22 fw800 mb20 pr-4">«{{ dataHero.quote }}»</div>
         <v-layout row align-center class="mb40 pr-4">
           <v-avatar size="80">
             <v-img :src="dataHero.userpic" alt="userpic"/>

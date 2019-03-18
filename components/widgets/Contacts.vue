@@ -41,7 +41,7 @@
           :center="{lat:50.4620758, lng:30.4960409}"
           :zoom="16"
           map-type-id="terrain"
-          style="width: 100%; height: 360px"
+          style="width: 100%; height: 360px;"
           :options="{
             zoomControl: true,
             mapTypeControl: false,

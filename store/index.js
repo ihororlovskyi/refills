@@ -5,6 +5,7 @@ import hero from './hero'
 import projects from './projects'
 import features from './features'
 import team from './team'
+import teamMembers from './teamMembers'
 import social from './social'
 import instaworks from './instaworks'
 import mobmenu from './mobmenu'
@@ -19,6 +20,7 @@ const store = () => {
       projects,
       features,
       team,
+      teamMembers,
       social,
       instaworks,
       mobmenu

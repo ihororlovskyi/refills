@@ -7,6 +7,7 @@ export default (context) => {
   store.dispatch('loadFeatures')
   store.dispatch('loadSocialLinks')
   store.dispatch('loadInstaworks')
+  store.dispatch('loadTeam')
   store.dispatch('loadTeamMembers')
   // return new Promise((resolve, reject) => {
   //   auth.onAuthStateChanged(user => {

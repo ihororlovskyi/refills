@@ -13,7 +13,7 @@
               style="height: calc(100% - 80px);"
             >
               <v-flex xs12 md8>
-                <div class="fs22 fw800">«{{ dataHero.messageZaglushka }}»</div>
+                <div class="fs22 fw800">«{{ dataHero.quote }}»</div>
               </v-flex>
               <v-flex xs12 md4>
                 <v-layout align-center>
@@ -55,7 +55,7 @@
         // userpic: 'https://firebasestorage.googleapis.com/v0/b/yehorpopov-db.appspot.com/o/hero%2Fpopov.png?alt=media&token=adec7907-af91-4cd6-8075-d9aaf587ffdd',
         // person: 'Егор Попов',
         // position: 'Главный архитектор дизайн студии',
-        comingSoon: 'Все наши проекты вы сможете увидеть уже 15 марта'
+        comingSoon: 'Все наши проекты вы сможете увидеть уже 20 марта'
       }
     }
   }
