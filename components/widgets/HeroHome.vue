@@ -5,11 +5,11 @@
         <div class="fs22 fw800 mb20 pr-4">«{{ dataHero.messageHome }}»</div>
         <v-layout row align-center class="mb40 pr-4">
           <v-avatar size="80">
-            <v-img :src="userpic" alt="userpic"/>
+            <v-img :src="dataHero.userpic" alt="userpic"/>
           </v-avatar>
           <div class="pl-3">
-            <div class="">{{ yehorpopov }}</div>
-            <div class="fs12">{{ position }}</div>
+            <div class="">{{ dataHero.person }}</div>
+            <div class="fs12">{{ dataHero.position }}</div>
           </div>
         </v-layout>
       </v-flex>
@@ -23,8 +23,8 @@
                 <div class="pl40 pb40 white--text fs24 fw800">{{ preTitleText }}<br>{{ i.title }}</div>
               </v-layout> -->
               <div :class="'topImgItem__hover'" :style="'background-color:' + i.heroColor">
-                <div class="fs22 fw800 white--text mb20">{{ i.title }}</div>
-                <v-btn class="mx-0 mt-3" large depressed color="#fff">
+                <div class="fs22 fw800 white--text mb40">{{ i.title }}</div>
+                <v-btn class="mx-0" large depressed color="#fff">
                   {{ btnReadMore.text }}
                   <v-icon right small>{{ btnReadMore.icon }}</v-icon>
                 </v-btn>
@@ -61,9 +61,9 @@
     data () {
       return {
         // message: 'Выберите дизайн проект, а мы сделаем перепланировку, ремонт и архитекторский надзор за 60 дней',
-        userpic: 'https://images.unsplash.com/photo-1495147334217-fcb3445babd5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=160&h=160&q=69',
-        yehorpopov: 'Егор Попов',
-        position: 'Главный архитектор дизайн студии',
+        // person: 'Егор Попов',
+        // userpic: 'https://images.unsplash.com/photo-1495147334217-fcb3445babd5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=160&h=160&q=69',
+        // position: 'Главный архитектор дизайн студии',
         btnReadMore: {
           text: 'Подробнее',
           icon: 'mdi-chevron-right'

@@ -1,7 +1,7 @@
 <template>
   <section>
-    <hero-zaglushka/>
-    <project-page-hero :hero="hero" :release="release"/>
+    <hero-zaglushka :dataHero="loadedHero"/>
+    <!-- <project-page-hero :hero="hero" :release="release"/> -->
     <project-page-about :hero="hero" :release="release"/>
     <v-divider/>
     <project-page-redevelopment :redevelopment="redevelopment"/>
@@ -142,6 +142,9 @@
       // },
       loadedOtherProjects () {
         return this.$store.getters.loadedOtherProjects(this.$route.params.key)
+      },
+      loadedHero () {
+        return this.$store.getters.loadedHero
       }
     },
     head () {
