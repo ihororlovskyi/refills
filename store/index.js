@@ -6,6 +6,7 @@ import projects from './projects'
 import features from './features'
 import team from './team'
 import social from './social'
+import instaworks from './instaworks'
 import mobmenu from './mobmenu'
 
 Vue.use(Vuex)
@@ -19,6 +20,7 @@ const store = () => {
       features,
       team,
       social,
+      instaworks,
       mobmenu
     }
    })

@@ -3,9 +3,9 @@
     <v-layout row wrap class="mt200 mb80" v-if="username">
 
       <v-flex xs6 class="mb20">
-        <div class="fs24 fw800 mb20">{{ title }}</div>
+        <div class="fs24 fw800 mb20">{{ data.title }}</div>
         <div v-if="username"><a :href="instapage" target="_blank">@{{ username }}</a></div>
-        <div class="mb20">{{ position }}</div>
+        <div class="mb20">{{ data.description }}</div>
       </v-flex>
 
       <v-flex xs6 class="text-xs-right mb20">
@@ -39,17 +39,15 @@
   // import fetch from 'isomorphic-fetch'
 
   export default {
-    // props: [
-    //   'data'
-    // ],
+    props: [
+      'data'
+    ],
     data () {
       return {
         btnFollow: {
           text: 'Follow',
           icon: 'mdi-instagram'
         },
-        title: 'Наши работы',
-        position: 'Главный архитектор дизайн студии',
         btnLoadMore: {
           text: 'Больше',
           icon: 'mdi-chevron-down'
@@ -62,8 +60,9 @@
         // next_url: this.data.pagination.next_url,
         // error: false
 
-        // access_token: '9623749496.1677ed0.5cccdc1243a64052b555b888c62b7770',
-        access_token: '176908350.1677ed0.3c30032e917a430e8d1f65eae2223b1e',
+        // access_token: '9623749496.1677ed0.5cccdc1243a64052b555b888c62b7770', // studio yehor popov
+        // access_token: '176908350.1677ed0.3c30032e917a430e8d1f65eae2223b1e', // ihor orlovskyi
+        access_token: this.data.access_token,
 
         url: 'https://api.instagram.com/v1/users/self/media/recent/',
         username: '',

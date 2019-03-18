@@ -7,7 +7,7 @@
     <custom-project/>
     <how-it-works :data="howItWorks"/>
     <v-divider/>
-    <works/>
+    <instaworks :data="loadedInstaworks"/>
     <v-divider/>
     <team :dataStore="loadedTeamMembersSortedByOld" :dataFetch="team"/>
     <v-divider/>
@@ -22,7 +22,7 @@
   import Projects from '@/components/widgets/Projects'
   import CustomProject from '@/components/widgets/CustomProject'
   import HowItWorks from '@/components/widgets/HowItWorks'
-  import Works from '@/components/widgets/Works'
+  import Instaworks from '@/components/widgets/Instaworks'
   import Team from '@/components/widgets/Team'
   import Contacts from '@/components/widgets/Contacts'
 
@@ -36,7 +36,7 @@
       Projects,
       CustomProject,
       HowItWorks,
-      Works,
+      Instaworks,
       Team,
       Contacts
     },
@@ -78,6 +78,9 @@
       },
       loadedTeamMembersSortedByOld () {
         return this.$store.getters.loadedTeamMembersSortedByOld
+      },
+      loadedInstaworks () {
+        return this.$store.getters.loadedInstaworks
       }
     },
     head: {
