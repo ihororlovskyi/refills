@@ -32,14 +32,10 @@
         </v-layout>
       </v-flex>
       <v-flex xs12 v-if="map">
-        <!-- <iframe class="GoogleMap"
-          :src="'https://www.google.com/maps/embed/v1/place?q=' + data.mapLocation + '&key=AIzaSyBETsKlJoUTKVLYIAe7O_CkVWwAsjiWhVw'"
-          allowfullscreen
-        /> -->
 
         <GmapMap
-          :center="{lat:50.4620758, lng:30.4960409}"
-          :zoom="16"
+          :center="{lat:data.mapLat, lng:data.mapLng}"
+          :zoom="data.mapZoom"
           map-type-id="terrain"
           style="width: 100%; height: 360px;"
           :options="{
@@ -78,8 +74,4 @@
 </script>
 
 <style lang="stylus">
-  // .GoogleMap
-  //   width: 100%
-  //   height: 360px
-  //   border: none
 </style>
