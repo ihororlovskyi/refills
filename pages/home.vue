@@ -4,7 +4,7 @@
     <features :data="loadedFeaturesSortedByOld"/>
     <v-divider/>
     <projects :data="loadedProjectsSortedByOld"/>
-    <custom-project/>
+    <custom-project :data="loadedCustomProject"/>
     <how-it-works :data="howItWorks"/>
     <v-divider/>
     <instaworks :data="loadedInstaworks"/>
@@ -81,6 +81,9 @@
       },
       loadedTeamMembersSortedByOld () {
         return this.$store.getters.loadedTeamMembersSortedByOld
+      },
+      loadedCustomProject () {
+        return this.$store.getters.loadedCustomProject
       },
       loadedInstaworks () {
         return this.$store.getters.loadedInstaworks

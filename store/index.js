@@ -8,6 +8,7 @@ import team from './team'
 import teamMembers from './teamMembers'
 import social from './social'
 import instaworks from './instaworks'
+import customProject from './customProject'
 import mobmenu from './mobmenu'
 
 Vue.use(Vuex)
@@ -23,6 +24,7 @@ const store = () => {
       teamMembers,
       social,
       instaworks,
+      customProject,
       mobmenu
     }
    })

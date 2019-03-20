@@ -4,6 +4,7 @@ export default (context) => {
   const { store } = context
   store.dispatch('loadHero')
   store.dispatch('loadProjects')
+  store.dispatch('loadCustomProject')
   store.dispatch('loadFeatures')
   store.dispatch('loadSocialLinks')
   store.dispatch('loadInstaworks')

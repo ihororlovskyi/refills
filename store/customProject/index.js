@@ -3,22 +3,22 @@ import firebase, { DB } from '@/services/fireinit.js'
 export default {
 
   state: {
-    loadedHero: []
+    loadedCustomProject: []
   },
 
   mutations: {
-    setLoadedHero (state, payload) {
-      state.loadedHero = payload
+    setLoadedCustomProject (state, payload) {
+      state.loadedCustomProject = payload
     }
   },
 
   actions: {
-    loadHero ({commit}) {
+    loadCustomProject ({commit}) {
       commit('setLoading', true)
-      firebase.database().ref('hero').once('value')
+      firebase.database().ref('customProject').once('value')
         .then((data) => {
           const content = data.val()
-          commit('setLoadedHero', content)
+          commit('setLoadedCustomProject', content)
           commit('setLoading', false)
         })
         .catch(
@@ -31,8 +31,8 @@ export default {
   },
 
   getters: {
-    loadedHero (state) {
-      return state.loadedHero
+    loadedCustomProject (state) {
+      return state.loadedCustomProject
     }
   }
 

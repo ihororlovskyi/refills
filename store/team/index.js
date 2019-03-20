@@ -17,8 +17,8 @@ export default {
       commit('setLoading', true)
       firebase.database().ref('team').once('value')
         .then((data) => {
-          const teamContent = data.val()
-          commit('setLoadedTeam', teamContent)
+          const content = data.val()
+          commit('setLoadedTeam', content)
           commit('setLoading', false)
         })
         .catch(
