@@ -11,6 +11,7 @@ import instaworks from './instaworks'
 import customProject from './customProject'
 import mobmenu from './mobmenu'
 import hiwWidget from './hiwWidget'
+import hiwItems from './hiwItems'
 
 Vue.use(Vuex)
 
@@ -27,7 +28,8 @@ const store = () => {
       instaworks,
       customProject,
       mobmenu,
-      hiwWidget
+      hiwWidget,
+      hiwItems
     }
    })
 }

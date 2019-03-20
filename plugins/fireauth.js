@@ -11,6 +11,7 @@ export default (context) => {
   store.dispatch('loadTeam')
   store.dispatch('loadTeamMembers')
   store.dispatch('loadHiwWidget')
+  store.dispatch('loadHiwItems')
   // return new Promise((resolve, reject) => {
   //   auth.onAuthStateChanged(user => {
   //     store.commit('setUser', user)

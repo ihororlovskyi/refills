@@ -4,16 +4,16 @@
       <v-flex xs12>
         <div class="fs24 fw800 mb80">{{ dataHiwWidget.widgetTitle }}</div>
       </v-flex>
-      <v-layout row wrap class="mb80" v-for="i in data.list" :key="i.title">
+      <v-layout row wrap class="mb80" v-for="i in dataItems" :key="i.id" v-if="i.isPublished">
         <v-flex xs12 sm4>
-          <v-img :aspect-ratio="1/1" v-if="i.img" :src="i.img" alt="" class="mb40"/>
-          <!-- <v-parallax class="mb-5" v-if="i.img" :src="i.img" height="300"/> -->
+          <!-- <v-img :aspect-ratio="1/1" v-if="i.img" :src="i.img" alt="" class="mb40"/> -->
+          <v-parallax v-if="i.img" :src="i.img" height="400" class="mb40"/>
         </v-flex>
         <v-flex xs12 sm8>
           <div class="pl40">
-            <div class="fs24 fw800 mb20">{{ i.title }}</div>
-            <p v-if="i.description" v-for="ii in i.description" :key="i.p">{{ ii.p }}</p>
-            <div v-if="!i.description">
+            <div v-if="i.title" class="fs24 fw800 mb20">{{ i.title }}</div>
+            <div v-if="i.description" v-html="i.description"/>
+            <div v-else>
               <order-dialog />
               <btn-download-presentation/>
             </div>
@@ -34,7 +34,7 @@
       BtnDownloadPresentation
     },
     props: [
-      'data',
+      'dataItems',
       'dataHiwWidget'
     ]
   }

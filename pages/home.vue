@@ -5,7 +5,7 @@
     <v-divider/>
     <projects :data="loadedProjectsSortedByOld"/>
     <custom-project :data="loadedCustomProject"/>
-    <hiw :data="howItWorks" :dataHiwWidget="loadedHiwWidget"/>
+    <hiw :dataItems="loadedHiwItemsSortedByNew" :dataHiwWidget="loadedHiwWidget"/>
     <v-divider/>
     <instaworks :data="loadedInstaworks"/>
     <v-divider/>
@@ -47,15 +47,15 @@
     async asyncData() {
       // const responseFeatures = await fetch('https://yehorpopov-db.firebaseio.com/features.json')
       // const features = await responseFeatures.json()
-      const responseHowItWorks = await fetch('https://yehorpopov-db.firebaseio.com/howItWorks.json')
-      const howItWorks = await responseHowItWorks.json()
+      // const responseHowItWorks = await fetch('https://yehorpopov-db.firebaseio.com/howItWorks.json')
+      // const howItWorks = await responseHowItWorks.json()
       // const responseTeam = await fetch('https://yehorpopov-db.firebaseio.com/team.json')
       // const team = await responseTeam.json()
       const responseContacts = await fetch('https://yehorpopov-db.firebaseio.com/contacts.json')
       const contacts = await responseContacts.json()
       return {
         // features,
-        howItWorks,
+        // howItWorks,
         // team,
         contacts
       }
@@ -63,6 +63,9 @@
     computed: {
       loadedHiwWidget () {
         return this.$store.getters.loadedHiwWidget
+      },
+      loadedHiwItemsSortedByNew () {
+        return this.$store.getters.loadedHiwItemsSortedByNew
       },
       loadedHero () {
         return this.$store.getters.loadedHero

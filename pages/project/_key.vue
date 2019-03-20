@@ -13,7 +13,7 @@
     <other-projects :data="loadedOtherProjects"/>
     <v-divider/>
     <custom-project :data="loadedCustomProject"/>
-    <hiw :data="howItWorks" :dataHiwWidget="loadedHiwWidget"/>
+    <hiw :dataItems="loadedHiwItemsSortedByNew" :dataHiwWidget="loadedHiwWidget"/>
     <v-divider/>
     <contacts :data="contacts" :social="loadedSocialLinksSortedByOld" :map="false" class="mt200 mb200"/>
   </section>
@@ -125,17 +125,20 @@
       const { data } = await axios.get(`projects/${key}.json`)
       const responseContacts = await fetch('https://yehorpopov-db.firebaseio.com/contacts.json')
       const contacts = await responseContacts.json()
-      const responseHowItWorks = await fetch('https://yehorpopov-db.firebaseio.com/howItWorks.json')
-      const howItWorks = await responseHowItWorks.json()
+      // const responseHowItWorks = await fetch('https://yehorpopov-db.firebaseio.com/howItWorks.json')
+      // const howItWorks = await responseHowItWorks.json()
       return {
         release: data,
-        howItWorks,
+        // howItWorks,
         contacts
       }
     },
     computed: {
       loadedHiwWidget () {
         return this.$store.getters.loadedHiwWidget
+      },
+      loadedHiwItemsSortedByNew () {
+        return this.$store.getters.loadedHiwItemsSortedByNew
       },
       loadedCustomProject () {
         return this.$store.getters.loadedCustomProject
