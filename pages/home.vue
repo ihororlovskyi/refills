@@ -5,7 +5,7 @@
     <v-divider/>
     <projects :data="loadedProjectsSortedByOld"/>
     <custom-project :data="loadedCustomProject"/>
-    <how-it-works :data="howItWorks"/>
+    <hiw :data="howItWorks" :dataHiwWidget="loadedHiwWidget"/>
     <v-divider/>
     <instaworks :data="loadedInstaworks"/>
     <v-divider/>
@@ -21,7 +21,7 @@
   import Features from '@/components/widgets/Features'
   import Projects from '@/components/widgets/Projects'
   import CustomProject from '@/components/widgets/CustomProject'
-  import HowItWorks from '@/components/widgets/HowItWorks'
+  import Hiw from '@/components/widgets/Hiw'
   import Instaworks from '@/components/widgets/Instaworks'
   import Team from '@/components/widgets/Team'
   import Contacts from '@/components/widgets/Contacts'
@@ -35,7 +35,7 @@
       Features,
       Projects,
       CustomProject,
-      HowItWorks,
+      Hiw,
       Instaworks,
       Team,
       Contacts
@@ -61,6 +61,9 @@
       }
     },
     computed: {
+      loadedHiwWidget () {
+        return this.$store.getters.loadedHiwWidget
+      },
       loadedHero () {
         return this.$store.getters.loadedHero
       },

@@ -1,8 +1,8 @@
 <template>
-  <v-container py-0 class="MainContainer" id="howitworks">
+  <v-container py-0 class="MainContainer" id="howitworks" v-if="dataHiwWidget.widgetIsPublished">
     <v-layout row wrap class="pt200">
       <v-flex xs12>
-        <div class="fs24 fw800 mb80">{{ data.title }}</div>
+        <div class="fs24 fw800 mb80">{{ dataHiwWidget.widgetTitle }}</div>
       </v-flex>
       <v-layout row wrap class="mb80" v-for="i in data.list" :key="i.title">
         <v-flex xs12 sm4>
@@ -34,12 +34,9 @@
       BtnDownloadPresentation
     },
     props: [
-      'data'
-    ],
-    data () {
-      return {
-      }
-    }
+      'data',
+      'dataHiwWidget'
+    ]
   }
 </script>
 

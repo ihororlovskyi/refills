@@ -12,8 +12,8 @@
     <order-content class="mb40"/>
     <other-projects :data="loadedOtherProjects"/>
     <v-divider/>
-    <custom-project/>
-    <how-it-works :data="howItWorks"/>
+    <custom-project :data="loadedCustomProject"/>
+    <hiw :data="howItWorks" :dataHiwWidget="loadedHiwWidget"/>
     <v-divider/>
     <contacts :data="contacts" :social="loadedSocialLinksSortedByOld" :map="false" class="mt200 mb200"/>
   </section>
@@ -24,7 +24,7 @@
   import OrderContent from '@/components/shared/OrderContent'
   import OtherProjects from '@/components/widgets/OtherProjects'
   import CustomProject from '@/components/widgets/CustomProject'
-  import HowItWorks from '@/components/widgets/HowItWorks'
+  import Hiw from '@/components/widgets/Hiw'
   import Contacts from '@/components/widgets/Contacts'
   import ProjectPageHero from '@/components/widgets/ProjectPageHero'
   import ProjectPageAbout from '@/components/widgets/ProjectPageAbout'
@@ -45,7 +45,7 @@
       OrderContent,
       OtherProjects,
       CustomProject,
-      HowItWorks,
+      Hiw,
       Contacts,
       ProjectPageHero,
       ProjectPageAbout,
@@ -134,6 +134,12 @@
       }
     },
     computed: {
+      loadedHiwWidget () {
+        return this.$store.getters.loadedHiwWidget
+      },
+      loadedCustomProject () {
+        return this.$store.getters.loadedCustomProject
+      },
       loadedSocialLinksSortedByOld () {
         return this.$store.getters.loadedSocialLinksSortedByOld
       },
@@ -160,6 +166,4 @@
 </script>
 
 <style lang="stylus">
-  // .ProjectsPage
-  //   margin-top: 130px
 </style>
