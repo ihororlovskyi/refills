@@ -7,6 +7,7 @@
             class="HeroProjectCurrentSlide"
             :class="{isActive : currentSlide == index}"
             v-for="(i, index) in dataProjects"
+            :key="i.id"
             :src="i.imgCover"
             height="620"
           >
