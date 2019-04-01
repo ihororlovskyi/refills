@@ -1,6 +1,6 @@
 <template>
-  <v-container py-0 class="MainContainer">
-    <v-layout row wrap class="mt200 mb80" v-if="username">
+  <v-container py-0 class="MainContainer" v-if="data.access_token">
+    <v-layout row wrap class="mt200 mb80">
 
       <v-flex xs6 class="mb20">
         <div class="fs24 fw800 mb20">{{ data.title }}</div>
@@ -103,7 +103,7 @@
           })
       }
     },
-    created() {
+    beforeMount() {
       this.getGrams()
     }
   }
