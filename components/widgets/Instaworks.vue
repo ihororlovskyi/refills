@@ -103,7 +103,7 @@
           })
       }
     },
-    beforeMount() {
+    created() {
       this.getGrams()
     }
   }
