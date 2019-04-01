@@ -7,8 +7,9 @@
           <v-container py-0 style="z-index:1" class="MainContainer">
             <header-inner/>
             <v-layout
-              align-center
+              row
               wrap
+              align-center
               align-content-space-around
               style="height: calc(100% - 80px);"
             >

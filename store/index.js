@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import loading from './loading'
 import hero from './hero'
+import slide from './slide'
 import projects from './projects'
 import features from './features'
 import team from './team'
@@ -20,6 +21,7 @@ const store = () => {
      modules: {
       loading,
       hero,
+      slide,
       projects,
       features,
       team,
