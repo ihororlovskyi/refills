@@ -1,6 +1,7 @@
 <template>
   <section>
-    <hero-home :dataProjects="loadedProjectsAtHero" :dataHero="loadedHero"/>
+    <hero-full-home :dataHero="loadedHero" :dataProjects="loadedProjectsAtHero"/>
+    <hero-home :dataHero="loadedHero" :dataProjects="loadedProjectsAtHero"/>
     <features :data="loadedFeaturesSortedByOld"/>
     <v-divider/>
     <projects :data="loadedProjectsSortedByOld"/>
@@ -17,6 +18,7 @@
 </template>
 
 <script>
+  import HeroFullHome from '@/components/widgets/HeroFullHome'
   import HeroHome from '@/components/widgets/HeroHome'
   import Features from '@/components/widgets/Features'
   import Projects from '@/components/widgets/Projects'
@@ -31,6 +33,7 @@
 
   export default {
     components: {
+      HeroFullHome,
       HeroHome,
       Features,
       Projects,
