@@ -51,9 +51,9 @@ module.exports = {
       }
     },
     extractCSS: true,
-    analyze: {
-      analyzerMode: 'static'
-    }
+    // analyze: {
+    //   analyzerMode: 'static'
+    // }
   },
   generate: {
     routes: [

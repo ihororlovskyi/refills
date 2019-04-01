@@ -8,7 +8,7 @@
     <custom-project :data="loadedCustomProject"/>
     <hiw :dataItems="loadedHiwItemsSortedByNew" :dataHiwWidget="loadedHiwWidget"/>
     <v-divider/>
-    <instaworks :data="loadedInstaworks"/>
+    <!-- <instaworks :data="loadedInstaworks"/> -->
     <v-divider/>
     <team :dataTeam="loadedTeam" :dataTeamMembers="loadedTeamMembersSortedByOld"/>
     <v-divider/>
