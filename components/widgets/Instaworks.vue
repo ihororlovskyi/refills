@@ -104,7 +104,9 @@
       }
     },
     created() {
-      this.getGrams()
+      if (typeof window !== 'undefined') {
+        this.getGrams()
+      }
     }
   }
 </script>
