@@ -24,11 +24,17 @@ export default {
               id: key,
               title: obj[key].title,
               isPublished: obj[key].isPublished,
-              description: obj[key].description,
               price: obj[key].price,
+              imgCover: obj[key].imgCover,
               atHero: obj[key].atHero,
               heroColor: obj[key].heroColor,
-              imgCover: obj[key].imgCover,
+              pageColor1: obj[key].pageColor1,
+              pageColor2: obj[key].pageColor2,
+              pageColor3: obj[key].pageColor3,
+              pageColor4: obj[key].pageColor4,
+              pageColor5: obj[key].pageColor5,
+              pageColor6: obj[key].pageColor6,
+              description: obj[key].description,
               date: obj[key].date
             })
           }

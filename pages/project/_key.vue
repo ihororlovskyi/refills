@@ -1,6 +1,7 @@
 <template>
   <section>
-    <hero-zaglushka :dataHero="loadedHero"/>
+    <!-- <hero-zaglushka :dataHero="loadedHero"/> -->
+    <project-page-hero-full :hero="hero" :release="release"/>
     <!-- <project-page-hero :hero="hero" :release="release"/> -->
     <project-page-about :hero="hero" :release="release"/>
     <v-divider/>
@@ -26,6 +27,7 @@
   import CustomProject from '@/components/widgets/CustomProject'
   import Hiw from '@/components/widgets/Hiw'
   import Contacts from '@/components/widgets/Contacts'
+  import ProjectPageHeroFull from '@/components/widgets/ProjectPageHeroFull'
   import ProjectPageHero from '@/components/widgets/ProjectPageHero'
   import ProjectPageAbout from '@/components/widgets/ProjectPageAbout'
   import ProjectPageRedevelopment from '@/components/widgets/ProjectPageRedevelopment'
@@ -47,6 +49,7 @@
       CustomProject,
       Hiw,
       Contacts,
+      ProjectPageHeroFull,
       ProjectPageHero,
       ProjectPageAbout,
       ProjectPageRedevelopment,

@@ -159,8 +159,8 @@
       &.isActive
         opacity: 1
     .HeroProjectItem
-      padding: 20px 0
-      // background-color: #ccc
+      padding: 220px 0 20px
+      // background-color: rgba(#fff,.2)
       position: relative
       .ReadMoreBtn
         opacity: 0

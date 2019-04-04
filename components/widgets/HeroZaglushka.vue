@@ -1,6 +1,7 @@
 <template>
   <v-container fluid pa-0 class="mb80 HeroZaglushka">
     <v-layout row wrap>
+
       <v-flex xs12>
         <v-parallax dark :src="background" height="620">
           <div class="my-black-mask"/>
@@ -35,6 +36,7 @@
           </v-container>
         </v-parallax>
       </v-flex>
+
     </v-layout>
   </v-container>
 </template>
