@@ -11,8 +11,8 @@
           <v-carousel-item
             v-for="i in hero.sliderImages"
             :key="i.src"
-            :src="i.src"
-          />
+          >
+            <v-parallax :src="i.src" height="680"/>
           </v-carousel-item>
         </v-carousel>
 

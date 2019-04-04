@@ -12,6 +12,12 @@
               <div class="pl40 pb40 white--text fs24 fw800">{{ preTitleText }}<br>{{ i.title }}</div>
             </v-layout>
           </v-img>
+          <!-- <v-parallax :src="i.imgCover" height="500">
+            <v-layout column fill-height>
+              <v-spacer></v-spacer>
+              <div class="pl40 pb40 white--text fs24 fw800">{{ preTitleText }}<br>{{ i.title }}</div>
+            </v-layout>
+          </v-parallax> -->
         </v-flex>
       </v-layout>
     </v-container>
