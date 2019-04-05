@@ -7,15 +7,15 @@
         </v-flex>
         <v-flex xs12 md4>
           <v-parallax :src="release.imgCover" height="300" class="mb40"/>
-          <div v-html="features.text1"/>
+          <div v-html="release.descriptionFeature1" class="mb40"/>
         </v-flex>
         <v-flex xs12 md4>
           <v-parallax :src="release.imgCover" height="300" class="mb40"/>
-          <div v-html="features.text2"/>
+          <div v-html="release.descriptionFeature2" class="mb40"/>
         </v-flex>
         <v-flex xs12 md4>
           <v-parallax :src="release.imgCover" height="300" class="mb40"/>
-          <div v-html="features.text3"/>
+          <div v-html="release.descriptionFeature3" class="mb40"/>
         </v-flex>
       </v-layout>
     </v-container>

@@ -22,10 +22,10 @@ export default {
           for (let key in obj) {
             items.push({
               id: key,
+              date: obj[key].date,
               title: obj[key].title,
               isPublished: obj[key].isPublished,
               price: obj[key].price,
-              imgCover: obj[key].imgCover,
               atHero: obj[key].atHero,
               heroColor: obj[key].heroColor,
               pageColor1: obj[key].pageColor1,
@@ -34,8 +34,22 @@ export default {
               pageColor4: obj[key].pageColor4,
               pageColor5: obj[key].pageColor5,
               pageColor6: obj[key].pageColor6,
-              description: obj[key].description,
-              date: obj[key].date
+              kuulaId: obj[key].kuulaId,
+              descriptionHero1: obj[key].descriptionHero1,
+              descriptionHero2: obj[key].descriptionHero2,
+              descriptionPlan: obj[key].descriptionPlan,
+              descriptionFeature1: obj[key].descriptionFeature1,
+              descriptionFeature2: obj[key].descriptionFeature2,
+              descriptionFeature3: obj[key].descriptionFeature3,
+              imgCover: obj[key].imgCover,
+              imgSlide1: obj[key].imgSlide1,
+              imgSlide2: obj[key].imgSlide2,
+              imgSlide3: obj[key].imgSlide3,
+              imgSlide4: obj[key].imgSlide4,
+              imgPlan: obj[key].imgPlan,
+              imgFeature1: obj[key].imgFeature1,
+              imgFeature2: obj[key].imgFeature2,
+              imgFeature3: obj[key].imgFeature3
             })
           }
           commit('setLoadedProjects', items)

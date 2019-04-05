@@ -6,7 +6,7 @@
           <div class="fs24 fw800">{{ redevelopment.preTitleText }}</div>
         </v-flex>
         <v-flex xs4 class="mb80">
-          <div v-html="redevelopment.text"/>
+          <div v-html="release.descriptionPlan"/>
         </v-flex>
         <v-flex xs12>
           <v-carousel
@@ -30,7 +30,7 @@
 
 <script>
   export default {
-    props: [ 'redevelopment' ]
+    props: [ 'redevelopment', 'release' ]
   }
 </script>
 

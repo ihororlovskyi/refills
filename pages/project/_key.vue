@@ -5,7 +5,7 @@
     <!-- <project-page-hero :hero="hero" :release="release"/> -->
     <project-page-about :hero="hero" :release="release"/>
     <v-divider/>
-    <project-page-redevelopment :redevelopment="redevelopment"/>
+    <project-page-redevelopment :redevelopment="redevelopment" :release="release"/>
     <v-divider/>
     <project-page-vr :vr="vr" :release="release"/>
     <v-divider/>
@@ -73,7 +73,7 @@
             { src: 'https://images.unsplash.com/photo-1527005980469-e172416c200b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1200&h=1600&q=69' }
           ],
           preTitleText: 'Дизайн проект',
-          description2: 'Проект планировки квартиры<br>Дизайн проект<br>Черновая и чистовая отделка',
+          // description2: 'Проект планировки квартиры<br>Дизайн проект<br>Черновая и чистовая отделка',
           prePriceText: 'Цена проекта и ремонта',
           btnReadMore: {
             text: 'Подробнее',
@@ -85,7 +85,7 @@
           preTitleImg: '/img/icons/vr.svg',
           preTitleText: 'Проект',
           afterTitleText: 'в VR 360°',
-          text: 'Рекомендуем просматривать с очками Cardboard 2. Все проекті моежем показать вам в очках у нас в офисе',
+          text: 'Рекомендуем просматривать с очками Cardboard 2. Все проекты моежем показать вам в очках у нас в офисе',
         },
         // chill: {
         //   preTitleText: 'Зоны отдыха',
@@ -107,13 +107,13 @@
         features: {
           preTitleText: 'Особенности квартиры',
           priceIncluded: 'В стоимость входит',
-          text1: 'Проект перепланирки квартиры<br>Дизайн проект<br>Черновая и чистовая отделка<br>Материалы для ремонта<br>Окончательная отделка пола, стен, потолка<br>Кухня<br>Двери<br>Ванная комната и туалет',
-          text2: 'Окончательная отделка пола, стен, потолка<br>Кухня<br>Двери<br>Ванная комната и туалет',
-          text3: 'Окончательная отделка пола, стен, потолка<br>Кухня<br>Двери<br>Ванная комната и туалет'
+          // text1: 'Проект перепланирки квартиры<br>Дизайн проект<br>Черновая и чистовая отделка<br>Материалы для ремонта<br>Окончательная отделка пола, стен, потолка<br>Кухня<br>Двери<br>Ванная комната и туалет',
+          // text2: 'Окончательная отделка пола, стен, потолка<br>Кухня<br>Двери<br>Ванная комната и туалет',
+          // text3: 'Окончательная отделка пола, стен, потолка<br>Кухня<br>Двери<br>Ванная комната и туалет'
         },
         redevelopment: {
           preTitleText: 'Виды перепланировки квартиры',
-          text: 'Проект перепланирки квартиры<br>Дизайн проект<br>Черновая и чистовая отделка',
+          // text: 'Проект перепланирки квартиры<br>Дизайн проект<br>Черновая и чистовая отделка',
           plans: [
             { src: 'https://images.unsplash.com/photo-1534840473734-95c07368722d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1200&h=1200&q=69' },
             { src: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1200&h=1200&q=69' }

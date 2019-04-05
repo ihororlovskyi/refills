@@ -22,6 +22,7 @@
           <v-carousel
             hide-delimiters
             height="600"
+            class="elevation-0"
           >
             <v-carousel-item :src="i.imgCover"/>
             <v-carousel-item :src="i.imgCover"/>
