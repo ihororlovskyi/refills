@@ -10,11 +10,11 @@
           <div v-html="release.descriptionFeature1" class="mb40"/>
         </v-flex>
         <v-flex xs12 md4>
-          <v-parallax :src="release.imgFeature1" height="300" class="mb40"/>
+          <v-parallax :src="release.imgFeature2" height="300" class="mb40"/>
           <div v-html="release.descriptionFeature2" class="mb40"/>
         </v-flex>
         <v-flex xs12 md4>
-          <v-parallax :src="release.imgFeature1" height="300" class="mb40"/>
+          <v-parallax :src="release.imgFeature3" height="300" class="mb40"/>
           <div v-html="release.descriptionFeature3" class="mb40"/>
         </v-flex>
       </v-layout>
