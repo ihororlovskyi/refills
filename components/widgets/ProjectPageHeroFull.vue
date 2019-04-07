@@ -8,11 +8,20 @@
           height="680"
           class="elevation-0"
         >
-          <v-carousel-item
-            v-for="i in hero.sliderImages"
-            :key="i.src"
-          >
-            <v-parallax :src="i.src" height="680"/>
+          <v-carousel-item v-if="release.imgCover">
+            <v-parallax :src="release.imgCover" height="680"/>
+          </v-carousel-item>
+          <v-carousel-item v-if="release.imgSlide1">
+            <v-parallax :src="release.imgSlide1" height="680"/>
+          </v-carousel-item>
+          <v-carousel-item v-if="release.imgSlide2">
+            <v-parallax :src="release.imgSlide2" height="680"/>
+          </v-carousel-item>
+          <v-carousel-item v-if="release.imgSlide3">
+            <v-parallax :src="release.imgSlide3" height="680"/>
+          </v-carousel-item>
+          <v-carousel-item v-if="release.imgSlide4">
+            <v-parallax :src="release.imgSlide4" height="680"/>
           </v-carousel-item>
         </v-carousel>
 

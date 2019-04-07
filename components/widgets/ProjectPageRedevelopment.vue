@@ -14,12 +14,8 @@
             height="600"
             class="elevation-0"
           >
-            <v-carousel-item
-              v-for="i in redevelopment.plans"
-              :key="i.src"
-              :src="i.src"
-            >
-              <!-- <v-parallax :src="i.src" height="600"/> -->
+            <v-carousel-item>
+              <v-parallax :src="release.imgPlan" height="600"/>
             </v-carousel-item>
           </v-carousel>
         </v-flex>
