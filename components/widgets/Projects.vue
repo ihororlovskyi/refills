@@ -3,7 +3,12 @@
     <v-layout column wrap class="Projects" id="projects">
       <v-layout row wrap class="ProjectsItem mt200" v-for="i in data" :key="i.id">
         <v-flex xs12>
-          <div class="fs24 fw800 mb80">{{ preTitle }} {{ i.title }}</div>
+          <div class="fs24 fw800 mb80"
+            @click="onLoad(i.id)"
+            style="cursor:pointer"
+          >
+            {{ preTitle }} {{ i.title }}
+          </div>
         </v-flex>
         <v-flex xs12 sm4>
           <div class="ProjectsItemText mb-5">
@@ -25,9 +30,10 @@
             class="elevation-0"
           >
             <v-carousel-item :src="i.imgCover"/>
-            <v-carousel-item :src="i.imgCover"/>
-            <v-carousel-item :src="i.imgCover"/>
-            <v-carousel-item :src="i.imgCover"/>
+            <v-carousel-item :src="i.imgSlide1"/>
+            <v-carousel-item :src="i.imgSlide2"/>
+            <v-carousel-item :src="i.imgSlide3"/>
+            <v-carousel-item :src="i.imgSlide4"/>
           </v-carousel>
         </v-flex>
         <v-flex xs12>
