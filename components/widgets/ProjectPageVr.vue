@@ -16,7 +16,7 @@
             allow="vr,gyroscope,accelerometer,fullscreen"
             scrolling="no"
             allowfullscreen="true"
-            :src="'https://kuula.co/share/' + release.kuulaId + '?fs=1&vr=0&zoom=1&thumbs=1&hideinst=1&chromeless=0&logo=0'"
+            :src="'https://kuula.co/share/' + release.kuulaId + '?fs=1&vr=0&thumbs=1&hideinst=1&chromeless=0&logo=0'"
           />
         </v-flex>
       </v-layout>
