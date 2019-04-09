@@ -6,6 +6,7 @@
           <div class="fs24 fw800 mb80"
             @click="onLoad(i.id)"
             style="cursor:pointer"
+            v-ripple
           >
             {{ preTitle }} {{ i.title }}
           </div>

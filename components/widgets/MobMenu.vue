@@ -1,6 +1,6 @@
 <template>
   <v-navigation-drawer
-    v-model="sidebarOpen"
+    :value="sidebarOpen"
     app
     right
     disable-resize-watcher
@@ -15,12 +15,13 @@
         </v-list-tile-content>
       </v-list-tile>
 
-      <!-- <v-subheader>Проекты</v-subheader> -->
+      <v-subheader>Проекты</v-subheader>
 
-      <!-- <v-list-tile
+      <v-list-tile
+        v-if="$route.path !== '/'"
         v-for="i in loadedProjectsSortedByOld"
         :key="i.key"
-        :to="'/project/' + i.id + '/'"
+        @click="onLoad(i.id)"
       >
         <v-list-tile-action>
           <v-avatar size="34">
@@ -30,7 +31,7 @@
         <v-list-tile-content>
           <v-list-tile-title>{{ i.title }}</v-list-tile-title>
         </v-list-tile-content>
-      </v-list-tile> -->
+      </v-list-tile>
 
       <v-subheader>Следите за нами</v-subheader>
 
@@ -86,6 +87,12 @@
       },
       phone () {
         return this.$store.state.mobmenu.phone
+      }
+    },
+    methods: {
+      onLoad (id) {
+        this.$store.dispatch('toggleSidebar')
+        this.$router.push('/project/' + id)
       }
     }
   }
