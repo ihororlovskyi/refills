@@ -13,7 +13,7 @@
       >
         <v-layout>
           <v-flex xs8 sm6 md4>
-            <a class="scrollactive-item fw800 px-3" :href="home.anchor" v-ripple v-if="$route.path === '/'">
+            <a class="scrollactive-item fw800 px-3" :href="home.anchor" v-ripple v-if="$route.path === '/home'">
               <img :src="home.logoDark" :alt="home.title" width="25px"/>
               <span class="ml-3">{{ home.title }}</span>
             </a>
@@ -60,7 +60,7 @@
               >
                 <v-icon small color="#262626">{{ i.icon }}</v-icon>
               </a>
-              <a class="hidden-sm-and-up px-4" @click="handleClick">
+              <a class="hidden-sm-and-up px-4" @click="handleClick" v-ripple>
                 <v-icon color="#262626">mdi-menu</v-icon>
               </a>
             </v-layout>

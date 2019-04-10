@@ -6,6 +6,8 @@
           <v-flex xs12>
             <div class="fs24 fw800 mb40">{{ data.title }}</div>
           </v-flex>
+        </v-layout>
+        <v-layout row wrap align-center>
           <v-flex xs12 sm4>
             <div class="mb40">{{ data.email }}</div>
           </v-flex>
