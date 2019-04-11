@@ -27,7 +27,7 @@
         btnOrder: {
           // icon: 'mdi-ruler-square',
           img: '/img/icons/order.svg',
-          text: 'Зыказать просчет проекта',
+          text: 'Заказать просчет проекта',
         }
       }
     },

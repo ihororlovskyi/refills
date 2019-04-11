@@ -2,6 +2,16 @@
   <v-container fluid pa-0>
     <v-container py-0 class="MainContainer">
       <v-layout row wrap class="pt80 pb80">
+
+        <v-flex xs12>
+          <v-layout row align-center class="pb80 ProjectPageHeroTitle">
+            <v-btn flat icon large :to="hero.btnBack.linkto" class="ml-0 mt-0 mr-2 mb-0" style="width:50px">
+              <v-icon large class="">{{ hero.btnBack.icon }}</v-icon>
+            </v-btn>
+            <h1 class="fs24 fw800">{{ hero.preTitleText }} {{ release.title }}</h1>
+          </v-layout>
+        </v-flex>
+
         <v-flex xs12 sm6 md4>
           <order-dialog width="280px"/>
           <btn-download-presentation width="280px"/>

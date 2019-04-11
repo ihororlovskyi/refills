@@ -1,18 +1,16 @@
 <template>
   <v-container py-0 class="MainContainer">
     <v-layout column wrap class="Projects" id="projects">
-      <v-layout row wrap class="ProjectsItem mt200" v-for="i in data" :key="i.id">
-        <v-flex xs12>
-          <div class="fs24 fw800 mb80"
-            @click="onLoad(i.id)"
-            style="cursor:pointer"
-            v-ripple
-          >
-            {{ preTitle }} {{ i.title }}
-          </div>
-        </v-flex>
+      <v-layout row wrap class="ProjectsItem mt80" v-for="i in data" :key="i.id">
         <v-flex xs12 sm4>
           <div class="ProjectsItemText mb-5">
+            <div class="fs24 fw800 mb40"
+              @click="onLoad(i.id)"
+              style="cursor:pointer"
+              v-ripple
+            >
+              {{ preTitle }} {{ i.title }}
+            </div>
             <div class="mb-5" v-html="i.description"/>
             <div class="mb-4">{{ prePrice }} <b>{{ i.price }}</b></div>
             <div class="mb20">
@@ -98,15 +96,12 @@
         & .flex
 
           &:nth-child(1)
-            order: 0
-
-          &:nth-child(2)
             order: 2
 
-          &:nth-child(3)
+          &:nth-child(2)
             order: 0
 
-          &:nth-child(4)
+          &:nth-child(3)
             order: 3
 
         & .ProjectsItemText
