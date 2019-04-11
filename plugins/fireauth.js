@@ -10,6 +10,7 @@ export default (context) => {
   store.dispatch('loadInstaworks')
   store.dispatch('loadTeam')
   store.dispatch('loadTeamMembers')
+  store.dispatch('loadAboutWidget')
   store.dispatch('loadHiwWidget')
   store.dispatch('loadHiwItems')
   // return new Promise((resolve, reject) => {

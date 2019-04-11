@@ -11,6 +11,7 @@ import social from './social'
 import instaworks from './instaworks'
 import customProject from './customProject'
 import mobmenu from './mobmenu'
+import about from './about'
 import hiwWidget from './hiwWidget'
 import hiwItems from './hiwItems'
 
@@ -30,6 +31,7 @@ const store = () => {
       instaworks,
       customProject,
       mobmenu,
+      about,
       hiwWidget,
       hiwItems
     }

@@ -10,10 +10,12 @@
     <v-divider/>
     <instaworks :data="loadedInstaworks"/>
     <v-divider/>
+    <about :dataAboutWidget="loadedAboutWidget"/>
+    <v-divider/>
     <team :dataTeam="loadedTeam" :dataTeamMembers="loadedTeamMembersSortedByOld"/>
     <v-divider/>
     <contacts :data="contacts" :social="loadedSocialLinksSortedByOld" :map="true" class="mt200 mb200"/>
-    <div style="padding-bottom:800px"/>
+    <!-- <div style="padding-bottom:800px"/> -->
   </section>
 </template>
 
@@ -24,6 +26,7 @@
   import Projects from '@/components/widgets/Projects'
   import CustomProject from '@/components/widgets/CustomProject'
   import Hiw from '@/components/widgets/Hiw'
+  import About from '@/components/widgets/About'
   import Instaworks from '@/components/widgets/Instaworks'
   import Team from '@/components/widgets/Team'
   import Contacts from '@/components/widgets/Contacts'
@@ -39,6 +42,7 @@
       Projects,
       CustomProject,
       Hiw,
+      About,
       Instaworks,
       Team,
       Contacts
@@ -66,6 +70,9 @@
     computed: {
       loadedHiwWidget () {
         return this.$store.getters.loadedHiwWidget
+      },
+      loadedAboutWidget () {
+        return this.$store.getters.loadedAboutWidget
       },
       loadedHiwItemsSortedByNew () {
         return this.$store.getters.loadedHiwItemsSortedByNew
