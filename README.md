@@ -1,11 +1,15 @@
-# refills
+# yehorpopov-nuxt
 
-Just experiments
+_Web development of Yehor Popov Studio site_
 
-### Run
+### Tech
+
+vue, nuxt, firebase ([database](https://yehorpopov-db.firebaseio.com/.json), storage, authentication), spa, pwa, vuetify, netlify
+
+### Work
 
 `npm i`
 
-`gulp`
+`npm run dev`
 
-Proudly hosted by [GitHub Pages](https://pages.github.com)
+#### Have fun! :)
