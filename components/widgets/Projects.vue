@@ -19,7 +19,7 @@
                 <v-icon right small>{{ btnReadMore.icon }}</v-icon>
               </v-btn>
             </div>
-            <btn-virtual-reality width="230px"/>
+            <btn-virtual-reality customWidth="230px" :kuulaId="i.kuulaId"/>
           </div>
         </v-flex>
         <v-flex xs12 sm8 class="mb80">

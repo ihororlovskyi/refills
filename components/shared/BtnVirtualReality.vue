@@ -1,7 +1,13 @@
 <template>
   <div class="mb20">
-    <v-btn outline large class="ma-0" slot="activator" :href="btnVirtualReality.url" target="_blank" :style="'width:' + width">
-      <!-- <v-icon large left>{{ btnVirtualReality.icon }}</v-icon> -->
+    <v-btn class="ma-0"
+      outline
+      large
+      slot="activator"
+      :href="btnVirtualReality.kuulaPost + kuulaId"
+      target="_blank"
+      :style="'width:' + customWidth"
+    >
       <img :src="btnVirtualReality.img" alt="" width="25px" class="mr20">
       {{ btnVirtualReality.text }}
     </v-btn>
@@ -10,14 +16,16 @@
 
 <script>
   export default {
-    props: [ 'width' ],
+    props: [
+      'customWidth',
+      'kuulaId'
+    ],
     data () {
       return {
         btnVirtualReality: {
-          // icon: 'mdi-virtual-reality',
           img: '/img/icons/vr.svg',
           text: 'Смотреть в VR 360°',
-          url: 'https://kuula.co/embed/7YJMY'
+          kuulaPost: 'https://kuula.co/post/'
         }
       }
     }

@@ -1,6 +1,6 @@
 <template>
   <div class="mb20">
-    <v-btn outline large class="mx-0" slot="activator" :href="btnDownloadPresentation.url" target="_blank" :style="'width:' + width">
+    <v-btn outline large class="mx-0" slot="activator" :href="btnDownloadPresentation.url" target="_blank" :style="'width:' + customWidth">
       <!-- <v-icon large left>{{ btnDownloadPresentation.icon }}</v-icon> -->
       <img :src="btnDownloadPresentation.img" alt="" width="25px" class="mr20">
       {{ btnDownloadPresentation.text }}
@@ -10,7 +10,9 @@
 
 <script>
   export default {
-    props: [ 'width' ],
+    props: [
+      'customWidth'
+    ],
     data () {
       return {
         btnDownloadPresentation: {

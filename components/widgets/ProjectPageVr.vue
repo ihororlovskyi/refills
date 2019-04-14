@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid pa-0>
+  <v-container fluid pa-0 id="vr">
     <v-container py-0 class="MainContainer">
       <v-layout row wrap class="pt80 pb80">
         <v-flex xs12 class="mb80">

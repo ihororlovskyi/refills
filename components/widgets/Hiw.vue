@@ -14,8 +14,8 @@
             <div v-if="i.title" class="fs24 fw800 mb20">{{ i.title }}</div>
             <div v-if="i.description" v-html="i.description"/>
             <div v-else>
-              <order-dialog />
-              <btn-download-presentation/>
+              <order-dialog customWidth="270px"/>
+              <btn-download-presentation customWidth="270px"/>
             </div>
           </div>
         </v-flex>

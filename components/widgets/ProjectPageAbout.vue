@@ -13,9 +13,9 @@
         </v-flex>
 
         <v-flex xs12 sm6 md4>
-          <order-dialog width="280px"/>
-          <btn-download-presentation width="280px"/>
-          <btn-virtual-reality width="280px"/>
+          <order-dialog customWidth="280px"/>
+          <btn-download-presentation customWidth="280px"/>
+          <btn-virtual-reality customWidth="280px" :kuulaId="release.kuulaId"/>
         </v-flex>
         <v-flex xs12 sm6 md3 offset-md1>
           <div v-html="release.descriptionHero1" class="mb20"/>
