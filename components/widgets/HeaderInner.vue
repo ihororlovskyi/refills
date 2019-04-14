@@ -3,16 +3,17 @@
 
     <scrollactive
       active-class="is-active"
-      :offset="100"
+      :offset="80"
       :duration="800"
       bezier-easing-value=".5,0,.35,1"
       class="scrollactive"
       v-on:itemchanged="onItemChanged"
       :modifyUrl="false"
+      :alwaysTrack="true"
     >
       <v-layout>
         <v-flex xs8 sm6 md4>
-          <a class="scrollactive-item fw800 px-3" :href="home.anchor" v-ripple v-if="$route.path === '/home'">
+          <a class="scrollactive-item fw800 px-3" :href="home.anchor" v-ripple v-if="$route.path === '/'">
             <img :src="home.logoWhite" :alt="home.title" width="25px"/>
             <span class="ml-3">{{ home.title }}</span>
           </a>
@@ -21,6 +22,17 @@
             <img :src="home.logoWhite" :alt="home.title" width="25px"/>
             <span class="ml-3">{{ home.title }}</span>
           </router-link>
+        </v-flex>
+
+        <v-flex class="hidden-sm-and-down" v-if="$route.path === '/'">
+          <v-layout>
+            <a class="scrollactive-item scrollactive-item--select px-3"
+              v-for="i in menu"
+              :key="i.anchor"
+              :href="i.anchor"
+              v-ripple
+            >{{ i.title }}</a>
+          </v-layout>
         </v-flex>
 
         <v-flex>
@@ -35,7 +47,6 @@
             >
               <v-icon small color="#fff">{{ i.icon }}</v-icon>
             </a>
-
             <a class="hidden-sm-and-up px-4" @click="handleClick" v-ripple>
               <v-icon color="#fff">mdi-menu</v-icon>
             </a>
@@ -95,6 +106,6 @@
       transition: background-color .5s ease
       color: #fff
       &:hover,
-      &.scrollactive-item--select.is-active
+      // &.scrollactive-item--select.is-active
         background-color: rgba(#fff,.25)
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid pa-0 class="mb80 HeroFullHome">
+  <v-container fluid pa-0 class="mb80 HeroFullHome" id="hero">
     <v-layout row wrap>
       <v-flex xs12>
         <div class="HeroProjectCurrentSlideContainer1">

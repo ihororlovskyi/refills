@@ -4,16 +4,17 @@
 
       <scrollactive
         active-class="is-active"
-        :offset="100"
+        :offset="80"
         :duration="800"
         bezier-easing-value=".5,0,.35,1"
         class="scrollactive"
         v-on:itemchanged="onItemChanged"
         :modifyUrl="false"
+        :alwaysTrack="true"
       >
         <v-layout>
           <v-flex xs8 sm6 md4>
-            <a class="scrollactive-item fw800 px-3" :href="home.anchor" v-ripple v-if="$route.path === '/home'">
+            <a class="scrollactive-item fw800 px-3" :href="home.anchor" v-ripple v-if="$route.path === '/'">
               <img :src="home.logoDark" :alt="home.title" width="25px"/>
               <span class="ml-3">{{ home.title }}</span>
             </a>
@@ -26,30 +27,17 @@
 
           <v-flex class="hidden-sm-and-down" v-if="$route.path === '/'">
             <v-layout>
-              <!-- <a class="scrollactive-item scrollactive-item--select px-3"
+              <a class="scrollactive-item scrollactive-item--select px-3"
                 v-for="i in menu"
                 :key="i.anchor"
                 :href="i.anchor"
                 v-ripple
-              >{{ i.title }}</a> -->
+              >{{ i.title }}</a>
             </v-layout>
           </v-flex>
 
           <v-flex>
             <v-layout justify-end>
-              <!-- <a class="hidden-md-and-down px-3" :href="'tel:' + phone.href">{{ phone.text }}</a>
-              <a class="hidden-sm-and-down px-2"
-                v-for="i in loadedSocialLinksSortedByOld"
-                :key="i.key"
-                :href="i.link"
-                target="_blank"
-                v-ripple
-              >
-                <v-icon small color="#262626">{{ i.icon }}</v-icon>
-              </a>
-              <a class="hidden-md-and-up px-4" @click.stop="drawer = !drawer">
-                <v-icon color="#262626">mdi-menu</v-icon>
-              </a> -->
               <a class="hidden-xs-only px-3" :href="'tel:' + phone.href">{{ phone.text }}</a>
               <a class="hidden-xs-only px-2"
                 v-for="i in loadedSocialLinksSortedByOld"
@@ -105,8 +93,6 @@
 <style lang="stylus">
   .HeaderFixed
     position: fixed
-    // left: 100%
-    // bottom: 100%
     z-index: 4
     background-color: #fff
     width: 100%
@@ -124,6 +110,6 @@
       transition: background-color .5s ease
       color: #262626
       &:hover,
-      &.scrollactive-item--select.is-active
+      // &.scrollactive-item--select.is-active
         background-color: #f7f7f7
 </style>

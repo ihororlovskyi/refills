@@ -1,6 +1,6 @@
 <template>
-  <v-container py-0 class="MainContainer" id="about" v-if="dataAboutWidget.widgetIsPublished">
-    <v-layout row wrap class="pt200 mb160">
+  <v-container py-0 class="MainContainer" v-if="dataAboutWidget.widgetIsPublished">
+    <v-layout row wrap class="pt200 mb160" id="about">
       <v-flex xs12>
         <div class="fs24 fw800 mb80">{{ dataAboutWidget.widgetTitle }}</div>
       </v-flex>

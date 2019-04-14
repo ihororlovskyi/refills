@@ -36,8 +36,8 @@
       <v-flex xs12 v-if="map">
 
         <GmapMap
-          :center="{lat:data.mapLat, lng:data.mapLng}"
-          :zoom="data.mapZoom"
+          :center="{lat:mapLat, lng:mapLng}"
+          :zoom="mapZoom"
           map-type-id="terrain"
           style="width: 100%; height: 360px;"
           :options="{
@@ -71,7 +71,14 @@
       'data',
       'social',
       'map'
-    ]
+    ],
+    data () {
+      return {
+        mapLat: 50.4620758,
+        mapLng: 30.4960409,
+        mapZoom: 16
+      }
+    }
   }
 </script>
 

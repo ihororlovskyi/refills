@@ -22,9 +22,13 @@ const state = {
     //   title: 'Наши работы',
     //   anchor: '#works'
     // },
+    // {
+    //   title: 'Команда',
+    //   anchor: '#team'
+    // },
     {
-      title: 'Команда',
-      anchor: '#team'
+      title: 'Про Студию',
+      anchor: '#about'
     },
     {
       title: 'Контакты',
