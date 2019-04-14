@@ -60,9 +60,9 @@
         // next_url: this.data.pagination.next_url,
         // error: false
 
-        // access_token: '9623749496.1677ed0.5cccdc1243a64052b555b888c62b7770', // yehor_reality
+        access_token: '9623749496.1677ed0.5cccdc1243a64052b555b888c62b7770', // studioyehorpopov
         // access_token: '176908350.1677ed0.3c30032e917a430e8d1f65eae2223b1e', // ihor orlovskyi
-        access_token: this.data.access_token,
+        // access_token: this.data.access_token,
 
         url: 'https://api.instagram.com/v1/users/self/media/recent/',
         username: '',
