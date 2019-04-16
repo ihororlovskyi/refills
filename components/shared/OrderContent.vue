@@ -39,7 +39,7 @@
       </div>
       <div class="" v-else>
         <p>Thanks!</p>
-        <p>Хачь ты ебаный!</p>
+        <!-- <p>Хачь ты ебаный!</p> -->
       </div>
     </div>
   </section>
