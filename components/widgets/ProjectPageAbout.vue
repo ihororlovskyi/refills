@@ -13,7 +13,7 @@
         </v-flex>
 
         <v-flex xs12 sm6 md4>
-          <order-dialog customWidth="280px"/>
+          <btn-order-dialog customWidth="280px"/>
           <btn-download-presentation customWidth="280px"/>
           <btn-virtual-reality customWidth="280px" :kuulaId="release.kuulaId"/>
         </v-flex>
@@ -30,14 +30,14 @@
 </template>
 
 <script>
-  import OrderDialog from '@/components/shared/OrderDialog'
+  import BtnOrderDialog from '@/components/shared/BtnOrderDialog'
   import BtnDownloadPresentation from '@/components/shared/BtnDownloadPresentation'
   import BtnVirtualReality from '@/components/shared/BtnVirtualReality'
 
   export default {
     props: [ 'hero', 'release' ],
     components: {
-      OrderDialog,
+      BtnOrderDialog,
       BtnDownloadPresentation,
       BtnVirtualReality
     },

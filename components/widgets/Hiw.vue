@@ -14,7 +14,7 @@
             <div v-if="i.title" class="fs24 fw800 mb20">{{ i.title }}</div>
             <div v-if="i.description" v-html="i.description"/>
             <div v-else>
-              <order-dialog customWidth="270px"/>
+              <btn-order-dialog customWidth="270px"/>
               <btn-download-presentation customWidth="270px"/>
             </div>
           </div>
@@ -25,12 +25,12 @@
 </template>
 
 <script>
-  import OrderDialog from '@/components/shared/OrderDialog'
+  import BtnOrderDialog from '@/components/shared/BtnOrderDialog'
   import BtnDownloadPresentation from '@/components/shared/BtnDownloadPresentation'
 
   export default {
     components: {
-      OrderDialog,
+      BtnOrderDialog,
       BtnDownloadPresentation
     },
     props: [

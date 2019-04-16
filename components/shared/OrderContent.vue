@@ -7,26 +7,47 @@
       </v-avatar>
       <div class="mb20">“{{ message }}”</div>
       <div class="fs12 mb40">{{ name }}</div>
-      <div class="" style="width:290px;margin:auto;">
-        <v-text-field
-          label="Телефон"
-          box
-        />
-        <v-text-field
-          label="Email"
-          box
-        />
+      <div v-if="!thanks">
+        <div class="" style="width:290px;margin:auto">
+          <v-text-field
+            label="Телефон"
+            v-model="phone"
+            append-icon="mdi-phone"
+            box
+            counter
+            maxlength="13"
+          />
+          <v-text-field
+            label="Email"
+            v-model="email"
+            append-icon="mdi-email-outline"
+            box
+          />
+        </div>
+        <div class="red--text">{{ error }}</div>
+        <v-btn
+          depressed
+          large
+          class="mx-0"
+          color="#262626"
+          dark
+          @click="onSend"
+        >
+          <img :src="btnSend.img" alt="" width="25px" class="mr20">
+          {{ btnSend.text }}
+        </v-btn>
       </div>
-      <v-btn depressed large class="mx-0" color="#262626" dark>
-        <!-- <v-icon large left>{{ btnSend.icon }}</v-icon> -->
-        <img :src="btnSend.img" alt="" width="25px" class="mr20">
-        {{ btnSend.text }}
-      </v-btn>
+      <div class="" v-else>
+        <p>Thanks!</p>
+        <p>Хачь ты ебаный!</p>
+      </div>
     </div>
   </section>
 </template>
 
 <script>
+  import axios from 'axios'
+
   export default {
     data () {
       return {
@@ -35,10 +56,55 @@
         message: 'Оставьте свой номер телефона и мы в течении 1 дня подготовим Вам план перепланировки квартиры и этапы ремонта под дизайн проект Manhattan',
         name: 'Егор Попов',
         btnSend: {
-          // icon: 'mdi-send',
           img: '/img/icons/send.svg',
           text: 'Отправить',
+        },
+
+        thanks: false,
+        error: '',
+
+        users: {},
+        id: '',
+        phone: '+38',
+        email: ''
+      }
+    },
+    methods: {
+      onSend () {
+        if (this.phone.length < 13) {
+          this.error = 'Телефон содержит 13 символов, сейчас ' + this.phone.length
+          return
         }
+        const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        if (!pattern.test(this.email)) {
+          this.error = 'Email указан не корректно'
+          return
+        }
+        this.error = ''
+        axios.get('https://sheetdb.io/api/v1/pgqj45n2a6cgc')
+          .then((response) => {
+            this.users = response
+            this.id = response.data.length
+            this.id += 1;
+            let user = {
+              id: this.id,
+              phone: this.phone,
+              email: this.email
+            }
+            // if (this.users.data.includes(user)) {
+            //   this.error = 'Телефон уже есть'
+            // } else {
+            //   this.error = 'Телефон новый'
+            // }
+            let saveUser = {
+              data: [
+                user
+              ]
+            }
+            this.users.data.push(user)
+            axios.post('https://sheetdb.io/api/v1/pgqj45n2a6cgc', saveUser)
+          })
+        this.thanks = true
       }
     }
   }

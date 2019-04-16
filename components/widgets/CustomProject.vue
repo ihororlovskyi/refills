@@ -10,7 +10,7 @@
         </v-flex>
         <v-flex xs12 sm4 class="mb80">
           <div class="mb20">{{ data.prePriceText }} <b>{{ data.price }}</b></div>
-          <order-dialog/>
+          <btn-order-dialog/>
         </v-flex>
         <v-flex xs12>
           <v-parallax :src="data.img" height="300"/>
@@ -21,11 +21,11 @@
 </template>
 
 <script>
-  import OrderDialog from '@/components/shared/OrderDialog'
+  import BtnOrderDialog from '@/components/shared/BtnOrderDialog'
 
   export default {
     components: {
-      OrderDialog
+      BtnOrderDialog
     },
     props: [
       'data'
