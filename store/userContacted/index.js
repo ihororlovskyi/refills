@@ -1,3 +1,5 @@
+import * as types from '../mutation-types'
+
 export default {
 
   state: {
@@ -5,18 +7,19 @@ export default {
   },
 
   mutations: {
-    setUserContacted (state, payload) {
-      state.loading = payload
+    [types.TOGGLE_USER_CONTACTED] (state) {
+      state.userContacted = !state.userContacted
     }
   },
 
   actions: {
+    toggleUserContacted ({ commit, state }) {
+      commit(types.TOGGLE_USER_CONTACTED)
+    }
   },
 
   getters: {
-    userContacted (state) {
-      return state.userContacted
-    }
+    userContacted: state => state.userContacted,
   }
 
 }

@@ -93,12 +93,12 @@
     ],
     data () {
       return {
-        background: 'https://firebasestorage.googleapis.com/v0/b/yehorpopov-db.appspot.com/o/hero%2Fzaglushka2.jpg?alt=media&token=6930edfb-dcf3-47ca-9b34-a43a1aea5a29',
+        // background: 'https://firebasestorage.googleapis.com/v0/b/yehorpopov-db.appspot.com/o/hero%2Fzaglushka2.jpg?alt=media&token=6930edfb-dcf3-47ca-9b34-a43a1aea5a29',
         // message: 'Равновесие между функцией, эстетикой и стоимостью реализации. Этот баланс позволяет создать гармоничное пространство вне зависимости от количества квадратных метров»',
         // userpic: 'https://firebasestorage.googleapis.com/v0/b/yehorpopov-db.appspot.com/o/hero%2Fpopov.png?alt=media&token=adec7907-af91-4cd6-8075-d9aaf587ffdd',
         // person: 'Егор Попов',
         // position: 'Главный архитектор дизайн студии',
-        comingSoon: 'В1се наши проекты вы сможете увидеть уже 20 марта',
+        // comingSoon: 'В1се наши проекты вы сможете увидеть уже 20 марта',
         // isHovering: false
         btnReadMore: {
           text: 'Подробнее',

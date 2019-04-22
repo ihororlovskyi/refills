@@ -5,9 +5,9 @@
       <v-avatar size="80" class="mb20">
         <img :src="userpic" alt="avatar">
       </v-avatar>
-      <div class="mb20">“{{ message }}”</div>
-      <div class="fs12 mb40">{{ name }}</div>
-      <div v-if="!thanks">
+      <div v-if="!userContacted">
+        <div class="mb20" v-html="message"/>
+        <div class="fs12 mb40">{{ name }}</div>
         <div class="" style="width:290px;margin:auto">
 
           <!-- <form action="https://formspree.io/bri.aime@gmail.com" method="post">
@@ -48,7 +48,10 @@
         </v-btn>
       </div>
       <div class="" v-else>
-        <p>Thanks!</p>
+        <div class="mb20">
+          <span v-html="thanksMessage"/>&nbsp;<span>{{ loadedСontacts.phone }}</span>
+        </div>
+        <div class="fs12 mb40">{{ name }}</div>
       </div>
     </div>
   </section>
@@ -62,14 +65,15 @@
       return {
         title: 'Заказ просчета проекта',
         userpic: 'https://images.unsplash.com/photo-1495147334217-fcb3445babd5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=160&h=160&q=69',
-        message: 'Оставьте свой номер телефона и мы в течении 1 дня подготовим Вам план перепланировки квартиры и этапы ремонта под дизайн проект Manhattan',
+        message: '«Оставьте свой номер телефона и мы в ближайшее время подготовим Вам план перепланировки квартиры и этапы ремонта под дизайн интересуещего вас проекта»',
         name: 'Егор Попов',
         btnSend: {
           img: '/img/icons/send.svg',
           text: 'Отправить',
         },
+        thanksMessage: 'Спасибо, в ближайшее время мы свяжемся с Вами<br>Или вы можете перезвонить нам',
 
-        thanks: false,
+        // thanks: false,
         error: '',
 
         users: {},
@@ -78,6 +82,14 @@
         email: '',
         date: '',
         url: this.$route.path
+      }
+    },
+    computed: {
+      loadedСontacts () {
+        return this.$store.getters.loadedСontacts
+      },
+      userContacted () {
+        return this.$store.getters.userContacted
       }
     },
     methods: {
@@ -118,6 +130,7 @@
             axios.post('https://sheetdb.io/api/v1/pgqj45n2a6cgc', saveUser)
           })
         this.thanks = true
+        this.$store.dispatch('toggleUserContacted')
       }
     }
   }

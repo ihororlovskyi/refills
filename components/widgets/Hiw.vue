@@ -1,7 +1,7 @@
 <template>
   <v-container py-0 class="MainContainer" id="howitworks" v-if="dataHiwWidget.widgetIsPublished">
     <v-layout row wrap class="pt200">
-      <v-flex xs12>
+      <v-flex xs12 offset>
         <div class="fs24 fw800 mb80">{{ dataHiwWidget.widgetTitle }}</div>
       </v-flex>
       <v-layout row wrap class="mb80" v-for="i in dataItems" :key="i.id" v-if="i.isPublished">
