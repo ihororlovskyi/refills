@@ -14,7 +14,7 @@
     <v-divider/>
     <team :dataTeam="loadedTeam" :dataTeamMembers="loadedTeamMembersSortedByOld"/>
     <v-divider/>
-    <contacts :data="contacts" :social="loadedSocialLinksSortedByOld" :map="true" class="mt200 mb200"/>
+    <contacts :data="loadedСontacts" :social="loadedSocialLinksSortedByOld" :map="true" class="mt200 mb200"/>
     <div style="padding-bottom:200px"/>
   </section>
 </template>
@@ -48,26 +48,16 @@
       Contacts
     },
     // async asyncData() {
-    //   const { data } = await axios.get('projects.json')
-    //   return { releases: data }
+    //   const responseContacts = await fetch('https://yehorpopov-db.firebaseio.com/contacts.json')
+    //   const contacts = await responseContacts.json()
+    //   return {
+    //     contacts
+    //   }
     // },
-    async asyncData() {
-      // const responseFeatures = await fetch('https://yehorpopov-db.firebaseio.com/features.json')
-      // const features = await responseFeatures.json()
-      // const responseHowItWorks = await fetch('https://yehorpopov-db.firebaseio.com/howItWorks.json')
-      // const howItWorks = await responseHowItWorks.json()
-      // const responseTeam = await fetch('https://yehorpopov-db.firebaseio.com/team.json')
-      // const team = await responseTeam.json()
-      const responseContacts = await fetch('https://yehorpopov-db.firebaseio.com/contacts.json')
-      const contacts = await responseContacts.json()
-      return {
-        // features,
-        // howItWorks,
-        // team,
-        contacts
-      }
-    },
     computed: {
+      loadedСontacts () {
+        return this.$store.getters.loadedСontacts
+      },
       loadedHiwWidget () {
         return this.$store.getters.loadedHiwWidget
       },
