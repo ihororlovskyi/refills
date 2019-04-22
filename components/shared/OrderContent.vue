@@ -9,6 +9,16 @@
       <div class="fs12 mb40">{{ name }}</div>
       <div v-if="!thanks">
         <div class="" style="width:290px;margin:auto">
+
+          <!-- <form action="https://formspree.io/bri.aime@gmail.com" method="post">
+            <input type="text" name="name" placeholder="Телефон" style="border:1px solid #000">
+            <input type="email" name="_replyto" placeholder="Email" style="border:1px solid #000">
+            <textarea rows="5" placeholder="Текст" name="message" style="border:1px solid #000"/>
+            <input name="_next" :value="'https://yehorpopov.com' + $nuxt.$route.path" style="display:none">
+            <br>
+            <input type="submit" value="Отправить">
+          </form> -->
+
           <v-text-field
             label="Телефон"
             v-model="phone"
@@ -39,7 +49,6 @@
       </div>
       <div class="" v-else>
         <p>Thanks!</p>
-        <!-- <p>Хачь ты ебаный!</p> -->
       </div>
     </div>
   </section>
@@ -66,7 +75,9 @@
         users: {},
         id: '',
         phone: '+38',
-        email: ''
+        email: '',
+        date: '',
+        url: $nuxt.$route.path
       }
     },
     methods: {
@@ -89,7 +100,9 @@
             let user = {
               id: this.id,
               phone: this.phone,
-              email: this.email
+              email: this.email,
+              date: new Date().toISOString(),
+              url: this.url
             }
             // if (this.users.data.includes(user)) {
             //   this.error = 'Телефон уже есть'
