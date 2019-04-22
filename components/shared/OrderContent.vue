@@ -77,7 +77,7 @@
         phone: '+38',
         email: '',
         date: '',
-        url: $nuxt.$route.path
+        url: this.$route.path
       }
     },
     methods: {
