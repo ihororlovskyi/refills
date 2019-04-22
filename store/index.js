@@ -16,6 +16,7 @@ import about from './about'
 import hiwWidget from './hiwWidget'
 import hiwItems from './hiwItems'
 import userContacted from './userContacted'
+import popupUserContacted from './popupUserContacted'
 
 Vue.use(Vuex)
 
@@ -37,7 +38,8 @@ const store = () => {
       about,
       hiwWidget,
       hiwItems,
-      userContacted
+      userContacted,
+      popupUserContacted
     }
  })
 }

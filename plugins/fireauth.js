@@ -14,6 +14,7 @@ export default (context) => {
   store.dispatch('loadAboutWidget')
   store.dispatch('loadHiwWidget')
   store.dispatch('loadHiwItems')
+  store.dispatch('loadPopupUserContacted')
   // return new Promise((resolve, reject) => {
   //   auth.onAuthStateChanged(user => {
   //     store.commit('setUser', user)

@@ -1,13 +1,13 @@
 <template>
   <section>
     <div class="text-xs-center pa40" style="max-width:800px;margin:auto;">
-      <div class="text-xs-center fs24 fw800 mb40">{{ title }}</div>
+      <div class="text-xs-center fs24 fw800 mb40">{{ loadedPopupUserContacted.popupOrderTitle }}</div>
       <v-avatar size="80" class="mb20">
-        <img :src="userpic" alt="avatar">
+        <img :src="loadedPopupUserContacted.popupPhoto" alt="avatar">
       </v-avatar>
       <div v-if="!userContacted">
-        <div class="mb20" v-html="message"/>
-        <div class="fs12 mb40">{{ name }}</div>
+        <div class="mb20" v-html="loadedPopupUserContacted.popupOrderMessage"/>
+        <div class="fs12 mb40">{{ loadedPopupUserContacted.popupPerson }}</div>
         <div class="" style="width:290px;margin:auto">
 
           <!-- <form action="https://formspree.io/bri.aime@gmail.com" method="post">
@@ -49,9 +49,9 @@
       </div>
       <div class="" v-else>
         <div class="mb20">
-          <span v-html="thanksMessage"/>&nbsp;<span>{{ loadedСontacts.phone }}</span>
+          <span v-html="loadedPopupUserContacted.popupOrderMessageThanks"/>&nbsp;<span>{{ loadedСontacts.phone }}</span>
         </div>
-        <div class="fs12 mb40">{{ name }}</div>
+        <div class="fs12 mb40">{{ loadedPopupUserContacted.popupPerson }}</div>
       </div>
     </div>
   </section>
@@ -63,17 +63,11 @@
   export default {
     data () {
       return {
-        title: 'Заказ просчета проекта',
-        userpic: 'https://images.unsplash.com/photo-1495147334217-fcb3445babd5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=160&h=160&q=69',
-        message: '«Оставьте свой номер телефона и мы в ближайшее время подготовим Вам план перепланировки квартиры и этапы ремонта под дизайн интересуещего вас проекта»',
-        name: 'Егор Попов',
         btnSend: {
           img: '/img/icons/send.svg',
           text: 'Отправить',
         },
-        thanksMessage: 'Спасибо, в ближайшее время мы свяжемся с Вами<br>Или вы можете перезвонить нам',
 
-        // thanks: false,
         error: '',
 
         users: {},
@@ -90,6 +84,9 @@
       },
       userContacted () {
         return this.$store.getters.userContacted
+      },
+      loadedPopupUserContacted () {
+        return this.$store.getters.loadedPopupUserContacted
       }
     },
     methods: {
@@ -129,7 +126,6 @@
             this.users.data.push(user)
             axios.post('https://sheetdb.io/api/v1/pgqj45n2a6cgc', saveUser)
           })
-        this.thanks = true
         this.$store.dispatch('toggleUserContacted')
       }
     }
