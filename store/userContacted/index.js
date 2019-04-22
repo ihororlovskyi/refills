@@ -1,11 +1,11 @@
 export default {
 
   state: {
-    loading: false
+    userContacted: false
   },
 
   mutations: {
-    setLoading (state, payload) {
+    setUserContacted (state, payload) {
       state.loading = payload
     }
   },
@@ -14,8 +14,8 @@ export default {
   },
 
   getters: {
-    loading (state) {
-      return state.loading
+    userContacted (state) {
+      return state.userContacted
     }
   }
 

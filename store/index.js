@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import loading from './loading'
+import contacts from './contacts'
 import hero from './hero'
 import slide from './slide'
 import projects from './projects'
@@ -14,13 +15,15 @@ import mobmenu from './mobmenu'
 import about from './about'
 import hiwWidget from './hiwWidget'
 import hiwItems from './hiwItems'
+import userContacted from './userContacted'
 
 Vue.use(Vuex)
 
 const store = () => {
   return new Vuex.Store({
-     modules: {
+    modules: {
       loading,
+      contacts,
       hero,
       slide,
       projects,
@@ -33,9 +36,10 @@ const store = () => {
       mobmenu,
       about,
       hiwWidget,
-      hiwItems
+      hiwItems,
+      userContacted
     }
-   })
+ })
 }
 
 export default store
