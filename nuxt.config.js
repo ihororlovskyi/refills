@@ -19,11 +19,17 @@ module.exports = {
   },
   // mode: 'spa',
   plugins: [
-    // { src: '~plugins/google-analytics.js', ssr: false },
     '~/plugins/vuetify.js',
     '~/plugins/fireauth.js',
     { src: '~/plugins/vue2-google-maps.js', ssr: false },
     '~/plugins/vue-scrollactive.js'
+  ],
+  modules: [
+    ['@nuxtjs/google-tag-manager', {
+      id: 'GTM-5JV4W4M',
+      pageTracking: true,
+      dev: false
+    }],
   ],
   css: [
     { src: '~/assets/css/main.css', lang: 'css'},

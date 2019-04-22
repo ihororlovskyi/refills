@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@nuxtjs/google-tag-manager": "^2.2.0",
     "axios": "^0.18.0",
     "core-js": "^2.6.5",
     "firebase": "^5.10.0",
